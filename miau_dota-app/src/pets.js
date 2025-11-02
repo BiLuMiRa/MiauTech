@@ -1,4 +1,4 @@
-let pets = [
+const pets = [
     {
         id: '1',
         image: 'https://i.pinimg.com/736x/1a/d3/e4/1ad3e46ecd880c19e721e44ef653982f.jpg',
@@ -12,7 +12,7 @@ let pets = [
         id: '2',
         image: 'https://i.pinimg.com/736x/98/86/07/9886078509a0c7f966dc78afe9cba8ea.jpg',
         name: 'Pipoca',
-        age: '1 ano',
+        age: '2 anos',
         sexo: 'macho',
         size: 'g',
         type: 'dog',
@@ -30,7 +30,7 @@ let pets = [
         id: '4',
         image: 'https://i.pinimg.com/736x/36/93/ff/3693ffff489efc5762a336f6f6c76681.jpg',
         name: 'Gorda',
-        age: '1 ano',
+        age: '3 anos',
         sexo: 'femea',
         size: 'm',
         type: 'cat',
@@ -39,9 +39,11 @@ let pets = [
         id: '5',
         image: 'https://i.pinimg.com/736x/b1/7e/3e/b17e3e420ba82312579049a8bbabf574.jpg',
         name: 'Thor',
-        age: '4 ano',
+        age: '4 anos',
         sexo: 'macho',
         size: 'g',
         type: 'dog',
     }
 ]
+
+export default pets;
