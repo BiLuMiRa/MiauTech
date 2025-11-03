@@ -28,6 +28,8 @@ body{
   background-color: #FCF9F3;
   font-family: fredoka;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
 /*------------MENU----------*/
@@ -107,6 +109,16 @@ header .options a:hover{
 
 .filters .dog-cat button{
   background-color: #452824;
+  color: white;
+}
+
+.filters button:hover {
+  background-color: #452824;
+  color: white;
+}
+
+.filters .dog-cat button:hover {
+  background-color: #e58233;
 }
 
 /*------------PETS-------------*/
@@ -170,4 +182,79 @@ footer .logo-footer{
   height: 158px;
   margin-bottom: 15px;
   margin-right: 100px;
+}
+
+@media (max-width: 768px) {
+  header{
+  flex-direction: column;
+}
+
+header #logo{
+  width: 130px;
+  margin-top: 5px;
+}
+
+header #dog1 {
+  height: 45px;
+  top: 5px;
+}
+
+header .options{
+  align-items: center;
+  margin-top: 12px;
+  gap: 20px;
+}
+
+.filters {
+  justify-content: center;
+  margin: 20px 10px 10px 20px;
+}
+
+.filters button {
+  margin-left: 5px;
+  margin-right:5px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 5px 10px 5px 10px;
+}
+
+.pets{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+.pets div{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 150px;
+  height: 230px;
+  margin: 50px;  
+}
+
+.pets div img{
+  height: 150px;
+  width: 150px;
+}
+
+.pets .name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.pets .infos-pet {
+  margin-top: 0px;
+  font-size: 1.1rem;
+}
+
+.pets #pata1 {
+  width: 60px;
+  bottom: 50px;
+  left: 120px;
+}
+
 }
