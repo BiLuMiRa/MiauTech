@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/miau-dota/',
+    base: '/Miau-dota/',
     build: {
         rollupOptions: {
             input: {
