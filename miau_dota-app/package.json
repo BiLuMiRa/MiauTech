@@ -12,6 +12,9 @@
     "vite": "^7.1.7"
   },
   "engines": {
-  "node": ">=22"
+    "node": ">=22"
+  },
+  "dependencies": {
+    "i": "^0.3.7"
   }
 }
