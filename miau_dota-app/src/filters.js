@@ -7,6 +7,7 @@ import { buttons } from "./buttons.js";
 //Mostrar pop-up
 const popup = document.getElementById("popup");
 const btnFiltrar = document.getElementById("filtrar");
+
 btnFiltrar.addEventListener("click", (event) => {
   popup.style.display = "flex";
   btnFiltrar.style.backgroundColor = "#EEE7D4";
@@ -20,7 +21,7 @@ fechar.addEventListener("click", (event) => {
 });
 
 //Array para acumular os filtros selecionados
-let filtros = [];
+let selecionados = [];
 
 //Selecionar botão e o adicionar a um array
 function selecionarBtn(btn) {
@@ -28,50 +29,60 @@ function selecionarBtn(btn) {
     btn.style.backgroundColor = "#e58233";
     btn.style.color = "white";
     btn.style.border = "none";
-    filtros.push(btn);
+    selecionados.push(btn);
   });
 }
 
-//Percorre cada button de buttons.js e seus elementos
+//Percorre cada elemento de buttons.js e o associa ao evento de clique
 buttons.forEach((b) => selecionarBtn(b.element));
 
-//Filtragem dos pets por um botão
-function filtrarPets(filtro, opcao) {
-  petcard.innerHTML = "";
-  const filtrados = pets.filter((pet) => pet[filtro] === opcao);
-  filtrados.forEach((pet) => {
-    petcard.innerHTML += createPet(pet);
-  });
-}
+//Armazenar parâmetros para a função filtrarPets em lista (Cria um array de arrays)
+function arrayFiltros() {
+  let lista_filtros = [];
 
-//Filtrar a partir do array
-function filtrarArray() {
-  petcard.innerHTML = "";
-  filtros.forEach((selecionado) => {
+  selecionados.forEach((selecionado) => {
     buttons.forEach((b) => {
       if (selecionado === b.element) {
-        filtrarPets(b.filtro, b.opcao);
+        lista_filtros.push([b.chave, b.opcao]);
       }
     });
   });
+  return lista_filtros;
 }
 
-//Buscar 
+//Filtragem dos pets passando pelo array criado
+function filtrarPets(lista) {
+
+//Aplicar todos os filtros em sequência
+  const filtrados = lista.reduce((acc, item) => acc.filter((pet) => pet[item[0]]===item[1]), pets
+);
+
+//join serve para juntar cards sem vírgula entre eles
+petcard.innerHTML = filtrados.map(createPet).join("");
+}
+
+//Buscar
 const buscar = document.getElementById("buscar");
+
 buscar.addEventListener("click", (event) => {
-    filtrarArray();
-    popup.style.display = "none";
+  filtrarPets(arrayFiltros());
+  popup.style.display = "none";
 });
 
 //Limpar
 const limpar = document.getElementById("limpar");
-limpar.addEventListener("click", () => {
-    filtros = [];
 
-    buttons.forEach((b) => {
-        const btn = b.element;
-        btn.style.backgroundColor = "transparent";
-        btn.style.color = "black";
-        btn.style.border = "1px solid #c4c1c1";
-    });
+limpar.addEventListener("click", () => {
+  selecionados = [];
+  buttons.forEach((b) => {
+    const btn = b.element;
+    btn.style.backgroundColor = "transparent";
+    btn.style.color = "black";
+    btn.style.border = "1px solid #c4c1c1";
+  });
+
+  petcard.innerHTML = "";
+  pets.forEach((pet) => {
+    petcard.innerHTML += createPet(pet);
+  });
 });
