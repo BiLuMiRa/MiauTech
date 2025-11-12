@@ -255,8 +255,8 @@ header .options a:hover{
 .pets #pata1 {
   width: 75px;
   position: relative;
-  bottom: 50px;
-  left: 210px;
+  bottom: 20%;
+  left: 50%;
   transform: rotate(350deg);
 }
 
