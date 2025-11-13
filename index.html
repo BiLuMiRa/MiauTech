@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <title>Início</title>
+    <script type="module" crossorigin src="/Miau-dota/assets/index-Da-6a773.js"></script>
+    <link rel="stylesheet" crossorigin href="/Miau-dota/assets/index-C8lneL8-.css">
+  </head>
+  <body>
+    <header>
+      <div class="imgs-header">
+        <img src="/Miau-dota/assets/Dog1-C9_TppTl.png" alt="dog1" id="dog1" />
+        <img src="/Miau-dota/assets/logo-CAPCib57.png" alt="logo" id="logo" />
+      </div>
+      <div class="options">
+        <a href="index.html">Início</a>
+        <a href="">Doar</a>
+        <a href="">Eventos de adoção</a>
+        <a href="">
+          <img
+            src="/Miau-dota/assets/user-base-BB_uoCH5.png"
+            alt="base-user-profile"
+            id="user"
+          />
+        </a>
+      </div>
+    </header>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/Miau-dota/assets/campanha1-Cle2bwBP.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/Miau-dota/assets/campanha2-Dq4_lCbW.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/Miau-dota/assets/campanha3-Cr_i69ST.png" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <button id="filtrar">
+      <svg
+        id="filtrar-icone"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          d="M18.75 12.75h1.5a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5ZM12 6a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 12 6ZM12 18a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 12 18ZM3.75 6.75h1.5a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5ZM5.25 18.75h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5ZM3 12a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 3 12ZM9 3.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM12.75 12a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0ZM9 15.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"
+        />
+      </svg>
+      <span>Filtrar</span>
+    </button>
+
+    <div id="popup" class="popup">
+      <div id="filtrar-fechar">
+        <h1 id="filtrar-por">Filtrar por</h1>
+        <svg
+          id="fechar"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <p class="texto-filtro" id="opcoesEspecie">Espécie</p>
+      <div class="opcoes">
+        <button id="btnGato" class="btnOpcao">Gato</button>
+        <button id="btnCachorro" class="btnOpcao">Cachorro</button>
+      </div>
+      <p class="texto-filtro" id="OpcoesSexo">Sexo</p>
+      <div class="opcoes">
+        <button id="btnFem" class="btnOpcao">Feminino</button>
+        <button id="btnMasc" class="btnOpcao">Masculino</button>
+      </div>
+      <p class="texto-filtro" id="OpcoesPorte">Porte</p>
+      <div class="opcoes">
+        <button id="btnP" class="btnOpcao">P</button>
+        <button id="btnM" class="btnOpcao">M</button>
+        <button id="btnG" class="btnOpcao">G</button>
+      </div>
+      <p class="texto-filtro" id="OpcoesIdade">Idade</p>
+      <div class="opcoes">
+        <button id="btnMeses" class="btnOpcao">2-11 meses</button>
+        <button id="btn1-3" class="btnOpcao">1-3 anos</button>
+        <button id="btn4-6" class="btnOpcao">4-6 anos</button>
+        <button id="btn7" class="btnOpcao">7+ anos</button>
+      </div>
+      <div id="limpar-buscar">
+        <button id="limpar">Limpar busca</button>
+        <button id="buscar">Buscar</button>
+      </div>
+    </div>
+
+    <section class="pets"></section>
+
+    <footer>
+      <img class="logo-footer" src="/Miau-dota/assets/logo2-BYlJ2oie.png" />
+      <div class="infos-pag">
+        Entre em contato <br />
+        Miaudota@miauau.com
+      </div>
+    </footer>
+
+  </body>
+</html>
