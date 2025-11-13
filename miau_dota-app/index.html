@@ -5,6 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <title>Início</title>
   </head>
   <body>
@@ -27,6 +31,23 @@
       </div>
     </header>
 
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./src/imgs/miaudota/campanha1.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/imgs/miaudota/campanha2.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/imgs/miaudota/campanha3.png" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
     <button id="filtrar">
       <svg
         id="filtrar-icone"
@@ -45,7 +66,8 @@
     <div id="popup" class="popup">
       <div id="filtrar-fechar">
         <h1 id="filtrar-por">Filtrar por</h1>
-        <svg id="fechar"
+        <svg
+          id="fechar"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
@@ -100,6 +122,6 @@
 
     <script type="module" src="./src/main.js"></script>
     <script type="module" src="./src/filters.js"></script>
-
+    <script type="module" src="./src/slides.js"></script>
   </body>
 </html>

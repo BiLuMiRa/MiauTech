@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap");
 
 .fredoka {
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100
+  font-variation-settings: "wdth" 100;
 }
 
 :root {
@@ -24,9 +23,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-  background-color: #FCF9F3;
-  font-family:'Segoe UI', sans-serif, fredoka; 
+body {
+  background-color: #fcf9f3;
+  font-family: "Segoe UI", sans-serif, fredoka;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -35,8 +34,8 @@ body{
 }
 
 /*------------MENU----------*/
-header{
-  background-color: #EEE7D4;
+header {
+  background-color: #eee7d4;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -45,7 +44,7 @@ header{
   font-family: fredoka;
 }
 
-header #logo{
+header #logo {
   width: 150px;
   margin-top: 10px;
 }
@@ -69,16 +68,16 @@ header #user {
   border-radius: 100px;
 }
 
-header .options{
+header .options {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FCF9F3;
+  color: #fcf9f3;
   margin-top: 12px;
 }
 
-header .options a{
+header .options a {
   margin-right: 15px;
   font-size: 1.3rem;
   font-weight: 500;
@@ -86,10 +85,32 @@ header .options a{
   text-decoration: none;
 }
 
-header .options a:hover{
+header .options a:hover {
   color: #e58233;
 }
 
+/*------------SLIDES----------*/
+
+.swiper {
+  width: 100%;   
+  max-width: 1100px; 
+  height: 400px;       
+  margin: 30px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  border-radius: 10px;
+  box-shadow: 0 1px 2px #000000;
+}
 
 /*------------FILTERS-------------*/
 
@@ -107,12 +128,12 @@ header .options a:hover{
   border-style: solid;
   border-radius: 80px;
   border-color: #c4c1c1;
-  background-color:transparent;
+  background-color: transparent;
   font-size: medium;
   padding: 10px;
   margin-top: 30px;
   margin-left: 20px;
-  color:#000000;
+  color: #000000;
 }
 
 #filtrar-icone {
@@ -126,9 +147,9 @@ header .options a:hover{
   margin-top: 5px;
   display: none;
   flex-direction: column;
-  color:#000000;
+  color: #000000;
   border-radius: 10px;
-  background-color:#ffffff;
+  background-color: #ffffff;
   width: 270px;
   position: absolute;
   z-index: 1; /* indica camada mais alta */
@@ -143,33 +164,33 @@ header .options a:hover{
   border-color: #c4c1c1;
   padding: 8px;
   margin-left: 5px;
-  color:#000000;
+  color: #000000;
 }
 
 .btnOpcao:hover {
-  background-color:#e58233;
+  background-color: #e58233;
   color: #ffffff;
   border: none;
 }
 
 .texto-filtro {
-  color:#452824;
-  font-weight:600;
+  color: #452824;
+  font-weight: 600;
   font-size: 15px;
   margin-left: 10px;
-  color:#000000;
+  color: #000000;
 }
 
 #filtrar-por {
-  color:#452824;
+  color: #452824;
   font-weight: 600;
   font-size: 20px;
   margin-left: 10px;
   margin-top: 5px;
-  color:#000000;
+  color: #000000;
 }
 
-#filtrar-fechar{
+#filtrar-fechar {
   display: flex;
   flex-direction: row;
 }
@@ -185,7 +206,7 @@ header .options a:hover{
   gap: 5px;
   margin-top: 40px;
   margin-bottom: 10px;
-  justify-content:center;
+  justify-content: center;
 }
 
 #limpar {
@@ -196,7 +217,7 @@ header .options a:hover{
   border-color: #c4c1c1;
   padding: 8px;
   width: 110px;
-  color:#000000;
+  color: #000000;
 }
 
 #limpar:hover {
@@ -204,8 +225,8 @@ header .options a:hover{
 }
 
 #buscar {
-  background-color:#452824;
-  color:#ffffff;
+  background-color: #452824;
+  color: #ffffff;
   border: none;
   border-radius: 30px;
   padding: 8px;
@@ -214,7 +235,7 @@ header .options a:hover{
 }
 
 /*------------PETS-------------*/
-.pets{
+.pets {
   margin-top: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -223,12 +244,12 @@ header .options a:hover{
   place-items: center;
 }
 
-.pets div{
+.pets div {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: black;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   padding: 10px;
   width: 250px;
   height: 350px;
@@ -237,8 +258,8 @@ header .options a:hover{
   font-family: fredoka;
 }
 
-.pets div img{
-  width: 100%; 
+.pets div img {
+  width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
@@ -264,8 +285,8 @@ header .options a:hover{
 }
 
 /*-----------FOOTER---------*/
-footer{
-  background-color: #EEE7D4;
+footer {
+  background-color: #eee7d4;
   color: #000000;
   display: flex;
   justify-content: center;
@@ -273,145 +294,142 @@ footer{
   padding: 30px;
 }
 
-footer .logo-footer{
+footer .logo-footer {
   height: 158px;
   margin-bottom: 15px;
   margin-right: 100px;
 }
 
 @media (max-width: 768px) {
-  header{
-  flex-direction: column;
-}
+  header {
+    flex-direction: column;
+  }
 
-header #logo{
-  width: 130px;
-  margin-top: 5px;
-}
+  header #logo {
+    width: 130px;
+    margin-top: 5px;
+  }
 
-header #dog1 {
-  height: 45px;
-  top: 5px;
-}
+  header #dog1 {
+    height: 45px;
+    top: 5px;
+  }
 
-header .options{
-  align-items: center;
-  margin-top: 12px;
-  gap: 20px;
-}
+  header .options {
+    align-items: center;
+    margin-top: 12px;
+    gap: 20px;
+  }
 
-header .options a{
-  font-size: 1.0rem;
-}
+  header .options a {
+    font-size: 1rem;
+  }
 
-.pets{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  place-items: center;
-}
+  .pets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+  }
 
-.pets div{
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 150px;
-  height: 230px;
-  margin: 50px;  
-}
+  .pets div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 150px;
+    height: 230px;
+    margin: 50px;
+  }
 
-.pets div img{
-  height: 150px;
-  width: 150px;
-}
+  .pets div img {
+    height: 150px;
+    width: 150px;
+  }
 
-.pets .name {
-  font-size: 1.0rem;
-  font-weight: 500;
-  margin-bottom: 0px;
-}
+  .pets .name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
 
-.pets .infos-pet {
-  margin-top: 0px;
-  font-size: 1.1rem;
-}
+  .pets .infos-pet {
+    margin-top: 0px;
+    font-size: 1.1rem;
+  }
 
-.pets #pata1 {
-  width: 55px;
-  bottom: 20%;
-  left: 85px;
-}
-
+  .pets #pata1 {
+    width: 55px;
+    bottom: 20%;
+    left: 85px;
+  }
 }
 
 @media (max-width: 600px) {
-  header{
-  flex-direction: column;
-}
+  header {
+    flex-direction: column;
+  }
 
-header #logo{
-  width: 100px;
-  margin-top: 5px;
-}
+  header #logo {
+    width: 100px;
+    margin-top: 5px;
+  }
 
-header #dog1 {
-  height: 40px;
-  top: 5px;
-}
+  header #dog1 {
+    height: 40px;
+    top: 5px;
+  }
 
-header .options{
-  align-items: center;
-  margin-top: 12px;
-  gap: 20px;
-}
+  header .options {
+    align-items: center;
+    margin-top: 12px;
+    gap: 20px;
+  }
 
+  .pets {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+  }
 
-.pets{
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  align-items: center;
-  place-items: center;
-}
+  .pets div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+    height: 400px;
+    margin: 100px;
+  }
 
-.pets div{
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 300px;
-  height: 400px;
-  margin: 100px;  
-}
+  .pets div img {
+    height: 300px;
+    width: 300px;
+  }
 
-.pets div img{
-  height: 300px;
-  width: 300px;
-}
+  .pets .name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
 
-.pets .name {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0px;
-}
+  .pets .infos-pet {
+    margin-top: 0px;
+    font-size: 1.3rem;
+  }
 
-.pets .infos-pet {
-  margin-top: 0px;
-  font-size: 1.3rem;
-}
+  .pets #pata1 {
+    width: 80px;
+    bottom: 20%;
+    left: 60%;
+  }
 
-.pets #pata1 {
-  width: 80px;
-  bottom: 20%;
-  left: 60%;
-}
+  .popup {
+    width: 90%;
+  }
 
-.popup {
-  width: 90%;
-}
-
-#fechar {
-  margin-left: 220px;
-}
-
+  #fechar {
+    margin-left: 220px;
+  }
 }
