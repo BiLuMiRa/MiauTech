@@ -5,14 +5,15 @@ import "./slides.js";
 
 export function createPet(pets) {
   return `
-  <a href="/Miau-dota/pages/details-pet.html?id=${pets.id}">
     <div>
-        <img src="${pets.image}">
-        <p class="name">${pets.name}</p>
-        <p class="infos-pet">${pets.age} | ${pets.sexo}</p>
-        <img src="./src/imgs/miaudota/pata1.png" alt="pata1" class="pata1">
-    </div> 
-  </a>`;
+      <a class="link-pets", href="/Miau-dota/pages/details-pet.html?id=${pets.id}">
+          <img src="${pets.image}">
+          <p class="name">${pets.name}</p>
+          <p class="infos-pet">${pets.age} | ${pets.sexo}</p>
+          <img src="./src/imgs/miaudota/pata1.png" alt="pata1" class="pata1">
+      </a>
+    </div>` 
+  ;
 }
 
 export const petcard = document.querySelector(".pets");
