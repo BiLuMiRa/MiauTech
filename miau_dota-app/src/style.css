@@ -240,8 +240,8 @@ header .options a:hover {
   height: 45px;
 }
 
-/*------------PETS-------------*/
-.pets{
+/*------------PETS and VETS-------------*/
+.pets, .vets{
   margin-top: -15px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -250,7 +250,7 @@ header .options a:hover {
   place-items: center;
 }
 
-.pets div {
+.pets div, .vets div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,21 +264,25 @@ header .options a:hover {
   font-family: fredoka;
 }
 
-.pets div img {
+.pets div img, .vets div img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
 }
 
-.pets a {
+.pets a, .vets a {
   text-decoration: none;
 }
 
-.pets .name {
+.pets .name, .vets .name {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0px;
+}
+
+.vets .specialty, .location{
+  margin: 0px;
 }
 
 .pets .infos-pet {
