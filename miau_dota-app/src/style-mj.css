@@ -143,21 +143,21 @@ header .options a:hover {
 }
 
 .vets .specialty, .location{
-  margin: 0px;
+  margin: 0%;
 }
 
-.vets .pata1 {
+.vets .estetoscopio {
   width: 75px;
   position: relative;
-  bottom: 22%;
+  bottom: 99%;
   left: 50%;
   transform: rotate(350deg);
 }
 
 /*-----------FOOTER---------*/
 footer {
-  background-color: #eee7d4;
-  color: #000000;
+  background-color: #28aef8;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,6 @@
 import vets from './vets.js';
 import "./style-mj.css";
-import estetoscopio from "./imgs/miaujuda/estetoscopio.png"
+import estetoscopio from "../public/imgs/miaujuda/estetoscopio.png"
 
 export function CreatVet(vet){
     return`

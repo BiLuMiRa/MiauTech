@@ -5,7 +5,7 @@ import "./slides.js";
 
 export function createPet(pets) {
   return `
-  <a href="/Miau-dota/pages/details-pet.html?id=${pets.id}">
+  <a href="/MiauTech/pages/details-pet.html?id=${pets.id}">
     <div>
         <img src="${pets.image}">
         <p class="name">${pets.name}</p>
