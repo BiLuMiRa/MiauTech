@@ -466,6 +466,52 @@ header .options a:hover {
 
 /*------------EVENTS PAGE-------------*/
 
+.events {
+  margin-top: 0%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  gap: 5%;
+  padding: 5%;
+}
+
+.events div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee7d4;
+  padding: 10px;
+  width: 780px;
+  height: 380px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-family: fredoka;
+}
+
+.events div img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center;
+}
+
+.events .nome-evento {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #452824;
+  text-align: center;
+}
+
+.events .local-evento {
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  color:#3f3f3f;
+}
+
 
 /*-----------FOOTER---------*/
 footer {
