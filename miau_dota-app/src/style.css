@@ -296,7 +296,7 @@ header .options a:hover {
 .pets{
   margin-top: 1%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   justify-content: center;
   align-items: center;
   place-items: center;

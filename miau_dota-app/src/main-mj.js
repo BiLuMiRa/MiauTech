@@ -1,5 +1,6 @@
 import vets from './vets.js';
 import "./style-mj.css";
+import estetoscopio from "./imgs/miaujuda/estetoscopio.png"
 
 export function CreatVet(vet){
     return`
@@ -8,6 +9,7 @@ export function CreatVet(vet){
         <p class="name">${vet.name}</p>
         <p class="specialty">${vet.specialty}</p>
         <p class="location">${vet.location}</p>
+        <img src="${estetoscopio}" alt="estetoscopio" class="estetoscopio">
     </div>
     `;
 }
