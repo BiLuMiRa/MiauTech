@@ -10,7 +10,8 @@ export default defineConfig({
                 detailsPet: resolve(__dirname, 'pages/details-pet.html'),
                 MJmain: resolve(__dirname, 'pages/miau-juda-ini.html'),
                 donations: resolve(__dirname, 'pages/donation.html'),
-                events: resolve(__dirname, 'pages/eventos.html')
+                events: resolve(__dirname, 'pages/eventos.html'),
+                MJdetailsVets: resolve(__dirname, 'pages/details-vet.html'),
             }
         }
     }
