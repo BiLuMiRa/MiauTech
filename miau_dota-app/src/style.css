@@ -493,7 +493,7 @@ header .options a:hover {
   object-position: center;
 }
 
-.events .nome-evento {
+.card-evento .nome-evento {
   font-size: 1.45rem;
   font-weight: 500;
   text-decoration: none;
@@ -501,7 +501,7 @@ header .options a:hover {
   text-align: center;
 }
 
-.events .local-evento {
+.card-evento .local-evento {
   font-size: 1.2rem;
   justify-content: center;
   align-items: center;
