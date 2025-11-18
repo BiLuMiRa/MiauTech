@@ -473,7 +473,7 @@ header .options a:hover {
   padding: 5%;
 }
 
-.events div {
+.card-evento {
   display: flex;
   flex-direction: column;
   align-items: center;
