@@ -10,7 +10,6 @@ export function createPet(pets) {
         <img src="${pets.image}">
         <p class="name">${pets.name}</p>
         <p class="infos-pet">${pets.age} | ${pets.sexo}</p>
-        <img src="../imgs/miaudota/pata1.png" alt="pata1" class="pata1">
     </div> 
   </a>`;
 }
