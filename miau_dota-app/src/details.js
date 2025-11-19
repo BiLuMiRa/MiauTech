@@ -1,17 +1,20 @@
 import pets from "./pets"
-// Pega a string da url
+
+// Pega a query string da url
 const string_url = window.location.search
 
 // Cria um objeto para facilitar a busca
 const urlparams = new URLSearchParams(string_url)
 
+// Busca na url o valor da chave "id".
 const id_pet = urlparams.get('id')
 
+// Busca no "pets.js" um animap que possua o mesmo id
 const pet = pets.find(a => a.id == id_pet)
 
+// Caso o pet exista, atribui os ids as informações do pet
 if (pet) {
     document.getElementById('pet-image').src = pet.image
-    // document.getElementById('pet-imagem').alt = pet.nome;
     document.getElementById('pet-name').textContent = pet.name;
     document.getElementById('pet-desc').textContent = pet.desc;
     document.getElementById('pet-sexo').textContent = pet.sexo
