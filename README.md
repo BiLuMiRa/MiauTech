@@ -27,6 +27,10 @@ Tem por objetivo conectar tutores de pets a veterinários qualificados próximos
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" alt="HTML5" width="50px"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" alt="CSS" width="37px"/>
 
+## Acompanhamento de tasks
+
+[Quadros no Trello](https://trello.com/w/areadetrabalhodeludmillajudaicoribeirodasilva/home)
+
 ## Desenvolvedores:
 * Ana Raquel
 * Bianca Rodrigues
