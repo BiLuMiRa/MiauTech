@@ -19,6 +19,30 @@ if (pet) {
     document.getElementById('pet-desc').textContent = pet.desc;
     document.getElementById('pet-sexo').textContent = pet.sexo
     document.getElementById('pet-age').textContent = pet.age;
+    if (pet.vacinas) {
+      document.getElementById('vacina-bool').textContent = 'SIM'
+      document.getElementById('vacina-data').textContent = pet.vacinas
+    } else [
+      document.getElementById('vacina-bool').textContent = "NÃO"
+    ]
+    if (pet.castr) {
+      document.getElementById('cast-bool').textContent = 'SIM'
+      document.getElementById('cast-data').textContent = pet.castr
+    } else {
+      document.getElementById('cast-bool').textContent = 'NÃO'
+    }
+    if (pet.vermi) {
+      document.getElementById('verm-bool').textContent = 'SIM'
+      document.getElementById('verm-data').textContent = pet.vermi
+    } else {
+      document.getElementById('verm-bool').textContent = 'NÃO'
+    }
+    if (pet.defici) {
+      document.getElementById('defc-bool').textContent = 'SIM'
+      document.getElementById('defc-data').textContent = pet.defici
+    } else {
+      document.getElementById('defc-bool').textContent = 'NÃO'
+    }
 
     // Adiciona o ID do pet no botão
     const btn = document.querySelector(".btnAdotar");
