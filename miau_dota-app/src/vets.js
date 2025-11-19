@@ -58,7 +58,7 @@ const vets = [
     {
         id: '8',
         image: 'https://pbs.twimg.com/media/E7p69d1WEAUujv9.jpg',
-        name: 'Dr. Lourdes Virginia',
+        name: 'Dra. Lourdes Virginia',
         location: 'Rua dos Bobos, 127',
         specialty: 'Clínico geral',
         description: 'Prazer, eu sou o Dr. Markos Liino, médico veterinário especializado no cuidado de animais silvestres e exóticos, como aves, répteis e pequenos mamíferos. Trabalho com consultas, exames, manejo nutricional, cirurgias e orientação para criação responsável, sempre seguindo normas de bem-estar e conservação da fauna. Tenho como missão garantir que cada espécie receba o manejo adequado às suas necessidades únicas, com respeito, segurança e conhecimento técnico. Conte comigo para cuidar do seu animal exótico com profissionalismo e carinho.',
