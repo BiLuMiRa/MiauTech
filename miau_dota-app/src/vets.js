@@ -41,7 +41,7 @@ const vets = [
     },
     {
         id: '6',
-        image: '../public/imgs/miaujuda/rubel-pato.png',
+        image: '../imgs/miaujuda/rubel-pato.png',
         name: 'Dr. Rubel Brisolla',
         location: 'Rua dos Bobos, 0',
         specialty: 'Especialista em silvestres',
