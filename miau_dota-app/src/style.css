@@ -483,16 +483,15 @@ header .options a:hover {
   height: 410px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
+  aspect-ratio: 3 / 4;
 }
 
 .card-evento img {
   width: 100%;
-  height: auto;
-  max-height: 80%;
-  aspect-ratio: 3/4;
   object-fit: contain;
   display: block;
 }
+
 
 .card-evento .nome-evento {
   font-size: 1.45rem;
