@@ -16,7 +16,37 @@ if (pet) {
     document.getElementById('pet-desc').textContent = pet.desc;
     document.getElementById('pet-sexo').textContent = pet.sexo
     document.getElementById('pet-age').textContent = pet.age;
+
+    // Adiciona o ID do pet no botão
+    const btn = document.querySelector(".btnAdotar");
+    btn.dataset.petId = pet.id;
+
+    //-----------evento no botão de adotar----------//
+
+  const petID = btn.dataset.petId;
+  let marcado = localStorage.getItem("Adotar_" + petID) === "true";
+  
+  atualizarbotao(btn,marcado);
+
+  btn.addEventListener("click", () => {
+    marcado = !marcado;
+    localStorage.setItem("Adotar_" + petID, marcado);
+    atualizarbotao(btn, marcado);
+  });
+  
   } else {
-    document.body.innerHTML = '<h1 class="pet-não-encontrado">Pet não encontrado!</h1>';
+    document.body.innerHTML = '<h1 style="color:black;"class="pet-não-encontrado">Pet não encontrado!</h1>';
   }
 
+//-------------------------------------------------//
+
+function atualizarbotao(btn, marcado){
+  if(marcado){
+    btn.textContent = "Adotado!";
+    btn.style.backgroundColor = "#d62e2e"
+  }
+  else {
+    btn.textContent = "Quero Adotar!";
+    btn.style.backgroundColor = "";
+  }
+}

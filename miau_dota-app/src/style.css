@@ -414,6 +414,10 @@ header .options a:hover {
   font-size: 1.5rem;
 }
 
+.infos-pet .dados-pet button:hover{
+  cursor: pointer;
+}
+
 /*------------DONATION PAGE-------------*/
 
 .pq-doar {

@@ -11,12 +11,47 @@ const vet = vets.find(a => a.id == id_vet)
 
 if (vet) {
     document.getElementById('vet-image').src = vet.image
-    // document.getElementById('vet-imagem').alt = vet.nome;
     document.getElementById('vet-name').textContent = vet.name;
     document.getElementById('vet-desc').textContent = vet.description;
     document.getElementById('vet-specialty').textContent = vet.specialty
     document.getElementById('vet-location').textContent = vet.location;
+
+  const btn = document.querySelector(".btnAgendar");
+  btn.dataset.vetId = vet.id;
+
+  //----------evento no botão de agendar consulta----------//
+
+  const vetId = btn.dataset.vetId;
+
+  let marcado = localStorage.getItem("Agendar_" + vetId) === "true";
+
+  atualizarbotao(btn, marcado);
+
+  btn.addEventListener("click", () => {
+
+    // Ele vai alterar de true/false
+    marcado = !marcado;
+
+    // Vao salvar a mudança no localStorage
+    localStorage.setItem("Agendar_" + vetId, marcado)
+
+    // Vai atualizar o botao
+    atualizarbotao(btn,marcado);
+  });
+
   } else {
-    document.body.innerHTML = '<h1 class="vet-não-encontrado">vet não encontrado!</h1>';
+    document.body.innerHTML = '<h1 style="color: black;" class="vet-não-encontrado">Veterinário não encontrado!</h1>';
   }
 
+//------------------------------//
+
+function atualizarbotao(btn, marcado) {
+  if(marcado){
+    btn.textContent = "Desmarcar Consulta";
+    btn.style.backgroundColor = "#243a69";
+  }
+  else {
+    btn.textContent = "Agendar Consulta";
+    btn.style.backgroundColor = "";
+  }
+}

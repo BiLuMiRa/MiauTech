@@ -238,6 +238,10 @@ header .options a:hover {
 .infos-vet .dados-vet #vet-desc {
   font-size: 1.3rem;
 }
+
+.infos-vet .dados-vet button:hover{
+  cursor: pointer;
+}
 /*-----------FOOTER---------*/
 footer {
   background-color: #28aef8;
