@@ -487,10 +487,11 @@ header .options a:hover {
 
 .card-evento img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 80%;
   aspect-ratio: 3/4;
   object-fit: contain;
-  object-position: center;
+  display: block;
 }
 
 .card-evento .nome-evento {
