@@ -310,14 +310,14 @@ header .options a:hover {
   background-color: #f2f2f2;
   padding: 10px;
   width: 250px;
-  height: 350px;
+  height: 345px;
   margin: 10% 15% 5% 1%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
 }
 
 .pets div img {
-  width: 100%;
+  width: 106%;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
@@ -331,6 +331,7 @@ header .options a:hover {
 .pets .name {
   font-size: 1.5rem;
   font-weight: 500;
+  margin-top: 10px;
   margin-bottom: 0px;
   text-decoration: none;
   color: #452824;
@@ -552,6 +553,7 @@ footer {
   flex-wrap: wrap;
   gap: 20px;
   text-align: center;
+  margin-top: 80px;
 }
 
 footer .logo-footer {
