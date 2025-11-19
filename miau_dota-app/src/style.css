@@ -368,6 +368,9 @@ header .options a:hover {
 .infos-pet .foto-pet #pet-image {
   margin: 10px;
   width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
 }
 
 .infos-pet .foto-pet #pata1 {
