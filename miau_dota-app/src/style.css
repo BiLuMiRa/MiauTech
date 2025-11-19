@@ -354,7 +354,7 @@ header .options a:hover {
 
 /*-----------DETAILS PET---------*/
 .infos-pet {
-  margin: 30px;
+  margin: 50px;
   display: flex;
   color: #452824;
 }
@@ -411,11 +411,41 @@ header .options a:hover {
 }
 
 .infos-pet .dados-pet #pet-desc {
-  font-size: 1.5rem;
+  margin-top: 15px;
+  font-size: 1.8rem;
+  text-align: justify;
 }
 
 .infos-pet .dados-pet button:hover{
   cursor: pointer;
+}
+
+.tabela-infos {
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-collapse: separate;
+  color: #452824;
+  font-size: 2.5rem;
+  margin: 80px auto 100px auto;
+  border: transparent;
+  border-spacing: 25px;
+  
+}
+
+.tabela-infos tr{
+  background-color: #eee7d4;
+}
+
+.tabela-infos th {
+  width: 50px;
+  padding: 40px;
+  font-weight: 500;
+  width: 33.3%;
+}
+
+.tabela-infos .title {
+  
 }
 
 /*------------DONATION PAGE-------------*/
