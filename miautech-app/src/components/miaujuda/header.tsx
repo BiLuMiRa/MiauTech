@@ -1,7 +1,7 @@
+import Link from "next/link";
 
 export function Header(){
         {/* Colocar as imagens no storage do supabase e mudar aqui */}
-        {/* usar o link no lugar do a href para mudar de páginas */}
 
     return ( 
         <header>
@@ -11,16 +11,16 @@ export function Header(){
             </div>
             <div className="options">
 
-            <a href="">Miau-Dota</a>
-            <a href="">Perdi meu pet</a>
-            <a href="">Achei um pet</a>
-            <a href="">
+            <Link href="/">Miau-Dota</Link>
+            <Link href="">Perdi meu pet</Link>
+            <Link href="">Achei um pet</Link>
+            <Link href="">
                 <img
                 src="../imgs/miaudota/user-base.png"
                 alt="base-user-profile"
                 id="user"
                 />
-                </a>
+                </Link>
 
             </div>
         </header>
