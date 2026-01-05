@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap");
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.fredoka {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #FCF9F3;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  background-color: #FCF9F3;
+  font-family: fredoka, 'Segoe UI', sans-serif; 
+  font-weight: 400;
+  width: 100%;
+}
+
+section, div {
+  max-width: 100%;
+}
+
+/*------------MENU----------*/
+header {
+  background-color: #eee7d4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-family: fredoka;
+}
+
+header #logo {
+  width: 150px;
+  margin-top: 10px;
+}
+
+header #dog1 {
+  height: 75px;
+  position: relative;
+  top: 15px;
+}
+
+header .imgs-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  height: auto;
+}
+
+header #user {
+  height: 45px;
+  border-radius: 100px;
+}
+
+header .options {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fcf9f3;
+  margin-top: 12px;
+}
+
+header .options a {
+  margin-right: 15px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #452824;
+  text-decoration: none;
+}
+
+header .options a:hover {
+  color: #28aef8;
+}
+
+/* ---------------VETERIANRIOS---------------*/
+.vets{
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+.vets div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background-color: #f2f2f2;
+  padding: 10px;
+  width: 250px;
+  height: 350px;
+  margin: 10% 15% 5% 1%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-family: fredoka;
+}
+
+.vets div img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.vets a {
+  text-decoration: none;
+  height: 100%;
+}
+
+.vets .name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+  text-decoration: none;
+  color: #452824;
+  text-align: center;
+}
+
+.vets .specialty, .location{
+  margin: 0%;
+}
+
+.vets .infos-vet {
+  margin-top: 0px;
+  font-size: 1.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.vets .estetoscopio {
+  width: 80px;
+  height: 90px;
+  position: relative;
+  bottom: 100%;
+  left: 50%;
+  transform: rotate(350deg);
+}
+
+/*-----------DETAILS PET---------*/
+.infos-vet {
+  margin: 30px;
+  display: flex;
+  color: #452824;
+  gap: 30px;
+}
+
+.infos-vet .foto-vet {
+  width: 300px;                   
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 18px;            
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  position: relative;
+  padding: 20px;                 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* IMAGEM PRINCIPAL */
+.infos-vet .foto-vet #vet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               
+  border-radius: 12px;             
+  margin: 0;
+}
+
+/* ESTETOSCÓPIO */
+.infos-vet .foto-vet #estetoscopio {
+  position: absolute;
+  width: 90px;
+  top: -15px;
+  left: -15px;
+  z-index: 5;
+}
+
+/* TEXTOS À DIREITA */
+.infos-vet .dados-vet {
+  max-width: 75%;
+}
+
+.infos-vet .dados-vet h2 {
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+.infos-vet .dados-vet h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0px;
+  padding-right: 10px;
+}
+
+.infos-vet .dados-vet .specialty-location {
+  display: flex;
+  font-weight: 300;
+  flex-direction: row;
+}
+
+.infos-vet .dados-vet button {
+  font-size: 1.3rem;
+  background-color: #452824;
+  border: none;
+  border-radius: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 20px;
+}
+
+.infos-vet .dados-vet #vet-desc {
+  font-size: 1.3rem;
+}
+
+.infos-vet .dados-vet button:hover{
+  cursor: pointer;
+}
+/*-----------FOOTER---------*/
+footer {
+  background-color: #28aef8;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  flex-wrap: wrap;  
+  gap: 20px;            
+  text-align: center;
+}
+
+footer .logo-footer {
+  height: 158px;
+  max-height: 168px;
+  width: auto;
+  margin-bottom: 15px;
+  margin-right: 100px;
+}
+
+/* ----------RESPONSIVIDADE---------- */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header #logo {
+    width: 130px;
+    margin-top: 5px;
+  }
+
+  header #dog1 {
+    height: 45px;
+    top: 5px;
+  }
+
+  header .options {
+    align-items: center;
+    margin-top: 12px;
+    gap: 20px;
+  }
+
+  header .options a {
+    font-size: 1rem;
+  }
+
+  footer .logo-footer {
+    height: 110px;
+    margin-right: 0;
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  header #logo {
+    width: 100px;
+    margin-top: 5px;
+  }
+
+  header #dog1 {
+    height: 40px;
+    top: 5px;
+  }
+
+  header .options {
+    align-items: center;
+    margin-top: 12px;
+    gap: 20px;
+  }
+
+  footer .logo-footer {
+    height: 90px;
+    max-height: 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pets div {
+    padding: 20px;
+    width: 280px;
+    height: 370px;
+    margin: 4% 3% 3% 1%;
+  }
+}
