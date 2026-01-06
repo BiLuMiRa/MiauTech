@@ -1,6 +1,8 @@
 import { Header } from "../../components/miaujuda/header";
 import { Footer } from "../../components/miaujuda/footer";
+import { ClientLayout } from "../../components/ClientLayout";
 import "./globals.css";
+import React from "react";
 
 export default function RootLayout({
   children,
@@ -9,13 +11,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
-        
-        <Header/>
+      <body className="antialiased">
 
-        {children}
-
-        <Footer/>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
   
       </body>
     </html>

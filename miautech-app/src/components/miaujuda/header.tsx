@@ -1,13 +1,12 @@
 import Link from "next/link";
 
 export function Header(){
-        {/* Colocar as imagens no storage do supabase e mudar aqui */}
 
     return ( 
         <header>
             <div className="imgs-header">
-            <img src="../imgs/miaujuda/Dog1-mascara.png" alt="dog1" id="dog1" />
-            <img src="../imgs/miaujuda/Logo-miaujuda.png" alt="logo" id="logo" />
+            <img src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaujuda/Dog1-mascara.png" alt="dog1" id="dog1" />
+            <img src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaujuda/Logo-miaujuda.png" alt="logo" id="logo" />
             </div>
             <div className="options">
 
@@ -16,7 +15,7 @@ export function Header(){
             <Link href="">Achei um pet</Link>
             <Link href="">
                 <img
-                src="../imgs/miaudota/user-base.png"
+                src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/users/user-base.png"
                 alt="base-user-profile"
                 id="user"
                 />
