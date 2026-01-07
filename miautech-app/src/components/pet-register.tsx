@@ -48,11 +48,11 @@ function PetRegister(){
 
     //-------------HTML---------------
     return (
-        <form 
+        <form
          onSubmit={(event) => {register(event)}}
          className="flex flex-col items-center gap-2 text-2xl bg-orange-300 m-20 p-5 border-0 rounded-3xl"
         >
-{/* ----------------NOME--------------- */}
+{/* ----------------NOME---------------  */}
             <label htmlFor="nome">
                 Nome:
                 <input
