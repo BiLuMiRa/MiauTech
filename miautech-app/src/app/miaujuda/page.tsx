@@ -19,7 +19,7 @@ export default async function Home() {
     <main>
       {data.map(vet => (
         <div key={vet.id} className="vets">
-          <Link href="/MiauTech/pages/details-vet.html?id=${vet.id}">
+          <Link href={`/miaujuda/details/${vet.id}`}>
           <div>
             <img src={vet.image} alt="vet"/>
             <p className="name">{vet.name}</p>

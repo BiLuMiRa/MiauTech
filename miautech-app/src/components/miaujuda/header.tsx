@@ -4,10 +4,13 @@ export function Header(){
 
     return ( 
         <header>
-            <div className="imgs-header">
-            <img src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaujuda/Dog1-mascara.png" alt="dog1" id="dog1" />
-            <img src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaujuda/Logo-miaujuda.png" alt="logo" id="logo" />
-            </div>
+            <Link href={"/miaujuda"}>
+                <div className="imgs-header">
+                    <img src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaujuda/Dog1-mascara.png" alt="dog1" id="dog1" />
+                    <img src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaujuda/Logo-miaujuda.png" alt="logo" id="logo" /> 
+                </div>
+            </Link>
+           
             <div className="options">
 
             <Link href="/">Miau-Dota</Link>
