@@ -4,15 +4,15 @@ export default function Slides() {
       <div className="swiper">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
-            <img src="/imgs/miaudota/campanha1.png" alt="Campanha 1" />
+            <img src="../public/imgs/miaudota/campanha1.png" alt="Campanha 1" />
           </div>
 
           <div className="swiper-slide">
-            <img src="/imgs/miaudota/campanha2.png" alt="Campanha 2" />
+            <img src="../public/imgs/miaudota/campanha2.png" alt="Campanha 2" />
           </div>
 
           <div className="swiper-slide">
-            <img src="/imgs/miaudota/campanha3.png" alt="Campanha 3" />
+            <img src="../public/imgs/miaudota/campanha3.png" alt="Campanha 3" />
           </div>
         </div>
 
