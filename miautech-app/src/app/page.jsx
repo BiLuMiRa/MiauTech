@@ -1,9 +1,11 @@
+"use client"
+
 import Link from 'next/link';
 import PetRegister from '../components/pet-register';
-import Header from '../components/header';
-import Slides from '../components/slides';
-import Filter from '../components/filter';
-import Pets from '../components/pets';
+import Header from '../components/Header';
+import Slides from '../components/Slides';
+import Filter from '../components/Filter';
+import Pets from '../components/Pets';
 
 
 export default function Home() {
