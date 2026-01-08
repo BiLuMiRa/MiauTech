@@ -1,8 +1,18 @@
 import Link from 'next/link';
-import PetRegister from '../components/pet-register'
+import PetRegister from '../components/pet-register';
+import Header from '../components/header';
+import Slides from '../components/slides';
+import Filter from '../components/filter';
+import Pets from '../components/pets';
+
 
 export default function Home() {
   return (
-    <Link href="/miaujuda/" style={{color:"tomato"}}>Teste de rota</Link>
+    <div>
+      <Header/>
+      <Slides/>
+      <Filter/>
+      <Pets/>
+    </div>
   );
 }
