@@ -666,6 +666,24 @@ footer .logo-footer {
   }
 }
 
+@media (width <= 820px) {
+  header .options a{
+    font-size: 1.1rem;
+  }
+
+}
+
+@media (width <= 770px) {
+  header .imgs-header {
+    width: 80%px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
