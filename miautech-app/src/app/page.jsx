@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import Link from 'next/link';
 import PetRegister from '../components/pet-register';
@@ -13,11 +13,9 @@ export default function Home() {
   return (
     <div>
       <Header_miaudota/>
-      <main className='content'>
         <Slides/>
         <Filter/>
-        <Pets/>
-      </main>
+        <section className='pets'><Pets/></section>
       <Footer_miaudota/>
     </div>
   );

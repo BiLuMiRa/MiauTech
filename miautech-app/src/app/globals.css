@@ -301,8 +301,16 @@ header .options a:hover {
 /*------------PETS-------------*/
 .pets {
   margin-top: 1%;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+.pets main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  gap: 50px;
   justify-content: center;
   align-items: center;
   place-items: center;
@@ -317,9 +325,9 @@ header .options a:hover {
   padding: 10px;
   width: 250px;
   height: 345px;
-  margin: 10% 15% 5% 1%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
+  margin: 0;
 }
 
 .pets div img {
@@ -345,18 +353,19 @@ header .options a:hover {
 }
 
 .pets .infos-pet {
-  margin-top: 0px;
-  font-size: 1.3rem;
+  margin: 0;
+  width: auto;
+  font-size: 1.25rem;
   justify-content: center;
   align-items: center;
 }
 
 .pets .pata1 {
-  width: 75px;
+  width: 68px;
   position: relative;
-  bottom: 22%;
-  left: 50%;
-  transform: rotate(350deg);
+  left: 83%;
+  top: 87%;
+  transform: rotate(340deg);
 }
 
 /*-----------DETAILS PET---------*/
