@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-/* @import "tailwindcss"; */
+ @import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap");
 
 * {
   margin: 0%;
@@ -138,6 +137,7 @@ header .options a:hover {
   justify-content: center;
   align-items: center;
   transition: 0.2s;
+  pointer-events: auto;
 }
 
 .swiper-button-prev:hover,
@@ -146,8 +146,8 @@ header .options a:hover {
   transform: scale(1.05);
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.swiper-button-prev::after,
+.swiper-button-next::after {
   font-size: 20px !important;
 }
 
@@ -168,6 +168,11 @@ header .options a:hover {
   opacity: 1;
   background: #a6632c;
   transform: scale(1.2);
+}
+
+.swiper {
+  --swiper-navigation-color: #654321;
+  --swiper-pagination-color: #a6632c;
 }
 
 /*------------FILTERS-------------*/

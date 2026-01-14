@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { supabase } from "../../lib/supabase"
-import "./globals.css"
+import "./global.css"
 
 type Vet = {
   id: number
