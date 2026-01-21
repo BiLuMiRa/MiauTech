@@ -18,22 +18,20 @@ export default function Slides() {
   return (
     <div>
       <Swiper
-        className="swiper"
+        class="swiper"
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        navigation={{
-          prevEl: ".swiper-button-prev",
-          nextEl: ".swiper-button-next",
-        }}
+        navigation={true}
         autoplay={{
-          delay:2500,
+          delay: 2500,
           disableOnInteraction: false,
         }}
-        >
-        <div className="swiper-pagination"></div>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+
+      >
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
         {slides.map((campanha) => (
           <SwiperSlide key={campanha.id} className="swiper-slide">
             <img src={campanha.image} alt={campanha.alt} />

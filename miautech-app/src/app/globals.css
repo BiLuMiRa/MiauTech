@@ -214,7 +214,7 @@ header .options a:hover {
 .popup {
   margin-left: 60px;
   margin-top: 5px;
-  display: none;
+  display: flex;
   flex-direction: column;
   color: #000000;
   border-radius: 10px;

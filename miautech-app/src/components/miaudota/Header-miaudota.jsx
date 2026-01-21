@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Header_miaudota() {
     return (
     <header>
@@ -6,16 +8,16 @@ export default function Header_miaudota() {
             <img src="./imgs/miaudota/logo.png" alt="logo" id="logo" />
        </div>
        <div className="options">
-            <a href="/MiauTech/">Início</a>
-            <a href="/MiauTech/pages/miau-juda-ini.html">Miau-juda</a>
-            <a href="/MiauTech/pages/donation.html">Doar</a>
-            <a href="/MiauTech/pages/eventos.html">Eventos de adoção</a>
-            <a href="">
+            <Link href="/MiauTech/">Início</Link>
+            <Link href="/MiauTech/pages/miau-juda-ini.html">Miau-juda</Link>
+            <Link href="/MiauTech/pages/donation.html">Doar</Link>
+            <Link href="/MiauTech/pages/eventos.html">Eventos de adoção</Link>
+            <Link href="">
             <img
             src="./imgs/miaudota/user-base.png"
             alt="base-user-profile"
             id="user"/>
-            </a>
+            </Link>
         </div>
     </header>
     )
