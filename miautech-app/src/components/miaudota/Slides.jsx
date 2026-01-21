@@ -18,7 +18,7 @@ export default function Slides() {
   return (
     <div>
       <Swiper
-        class="swiper"
+        className="swiper"
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
         pagination={{ clickable: true }}
@@ -29,9 +29,9 @@ export default function Slides() {
         }}
 
       >
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div className="swiper-pagination"></div>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
         {slides.map((campanha) => (
           <SwiperSlide key={campanha.id} className="swiper-slide">
             <img src={campanha.image} alt={campanha.alt} />
