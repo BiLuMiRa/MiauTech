@@ -59,7 +59,10 @@ function PetRegister(){
                 <input
                  id="nome" 
                  name="nome"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 type="text" pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõ]+)*$"
+                 title="Digite apenas letras"
+                 required
                 ></input>
             </label>
 
@@ -70,12 +73,13 @@ function PetRegister(){
                 <input
                  id="idade" 
                  name="idade"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
                 ></input>
                 <select
                  id="faixa"
                  name="faixa"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 required
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
                 >
                     <option value={"meses"}>meses</option>
                     <option value={"anos"}>anos</option>
@@ -90,7 +94,8 @@ function PetRegister(){
                 <select 
                  id="sexo" 
                  name="sexo"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 required
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
                 >
                     <option value={"Fêmea"}>Fêmea</option>
                     <option value={"Macho"}>Macho</option>
@@ -103,7 +108,8 @@ function PetRegister(){
                 <select
                  id="tamanho" 
                  name="tamanho"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 required
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
                 >
                     <option value={"p"}>Pequeno</option>
                     <option value={"m"}>Médio</option>
@@ -117,7 +123,8 @@ function PetRegister(){
                 <select 
                  id="tipo" 
                  name="tipo"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 required
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
                 >
                     <option value={"Gato"}>Gato</option>
                     <option value={"Cachorro"}>Cachorro</option>
@@ -131,7 +138,9 @@ function PetRegister(){
                 <textarea
                  id="desc" 
                  name="desc"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 minLength={10} maxLength={500}
+                 required
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
                 ></textarea>
             </label>
 
@@ -189,7 +198,9 @@ function PetRegister(){
                 <input 
                  id="defici" 
                  name="defici"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1"
+                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*(,\s?[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*)*$"
+                 title="Digite apenas letras"
                 ></input>
             </label>
 
