@@ -2,6 +2,8 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Header_miaudota from "@/src/components/miaudota/Header-miaudota"
+
 export default function RootLayout({
   children,
 }: Readonly<{

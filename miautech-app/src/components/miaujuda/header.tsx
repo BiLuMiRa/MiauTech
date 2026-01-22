@@ -15,7 +15,7 @@ export function Header(){
 
             <Link href="/">Miau-Dota</Link>
             <Link href="">Perdi meu pet</Link>
-            <Link href="">Achei um pet</Link>
+            <Link href="/miaujuda/foundpet/">Achei um pet</Link>
             <Link href="">
                 <img
                 src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/users/user-base.png"

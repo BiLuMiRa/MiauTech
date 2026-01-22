@@ -1,6 +1,6 @@
 
 import { ClientLayout } from "../../components/ClientLayout";
-import "./globals.css";
+import "./style.css";
 import React from "react";
 
 export default function RootLayout({
@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
+      
         <ClientLayout>
           {children}
         </ClientLayout>
