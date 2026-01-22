@@ -4,7 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 
 import Link from "next/link";
-import PetRegister from "../components/pet-register";
+import PetRegister from "../components/miaudota/pet-register";
 import Header_miaudota from "../components/miaudota/Header-miaudota";
 import Slides from "../components/miaudota/Slides";
 import Filter from "../components/miaudota/Filter";
