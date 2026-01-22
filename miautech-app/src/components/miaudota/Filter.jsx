@@ -1,7 +1,14 @@
-export default function Filter() {
+"use client";
+import { useState } from "react";
+
+export default function Filter({ setpopupAberto }) {
   return (
-    <div>
-      <button id="filtrar">
+    <div className="filtros">
+      <button id="filtrar" 
+      onClick={() => {
+        console.log('CLICADO')
+        setpopupAberto(true)}
+      }>
         <svg
           id="filtrar-icone"
           xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +23,3 @@ export default function Filter() {
     </div>
   );
 }
-
-
