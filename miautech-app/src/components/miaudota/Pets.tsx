@@ -17,7 +17,7 @@ export default async function Pets() {
     if (error) return <div> Erro: {error.message} </div>
 
     return (
-        <main>
+        <section className="pets">
             {data.map(pet => (
                     <a href={`/miaujuda/details/${pet.id}`}>
                         <img src="./imgs/miaudota/pata1.png" className="pata1" />
@@ -28,6 +28,6 @@ export default async function Pets() {
                             </div>
                     </a>
             ))}
-        </main>
+        </section>
     )
 }

@@ -23,9 +23,7 @@ export default function Home() {
         <Slides />
         <Filter setpopupAberto={setpopupAberto} />
         {popupAberto && <Popup />}
-        <section className="pets">
           <Pets />
-        </section>
       </main>
       <Footer_miaudota />
     </div>

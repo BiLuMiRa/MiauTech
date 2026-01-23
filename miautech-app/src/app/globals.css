@@ -308,20 +308,14 @@ header .options a:hover {
 
 /*------------PETS-------------*/
 .pets {
+  margin: 5%;
   margin-top: 1%;
-  justify-content: center;
-  align-items: center;
-  place-items: center;
-}
-
-.pets main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   gap: 50px;
   justify-content: center;
   align-items: center;
   place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .pets div {
@@ -330,7 +324,7 @@ header .options a:hover {
   align-items: center;
   color: black;
   background-color: #f2f2f2;
-  padding: 10px;
+  padding: 7%;
   width: 250px;
   height: 345px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
