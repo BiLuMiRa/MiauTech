@@ -15,7 +15,7 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Fredoka', "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -31,7 +31,7 @@
 
 body {
   background-color: #fcf9f3;
-  font-family: fredoka, "Segoe UI", sans-serif;
+  font-family: 'Fredoka', "Segoe UI", sans-serif;
   font-weight: 400;
   width: 100%;
   min-height: 100vh;
@@ -54,41 +54,39 @@ header {
 }
 
 header #logo {
-  width: 150px;
-  margin-top: 10px;
+  margin-top: 5%;
 }
 
 header #dog1 {
-  height: 75px;
   position: relative;
   top: 15px;
 }
 
 header .imgs-header {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
-  margin-left: 25px;
   height: auto;
+  margin-left: 1.5%;
 }
 
 header #user {
-  height: 45px;
-  border-radius: 100px;
+  display: inline-flex;
 }
 
 header .options {
-  text-align: center;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   color: #fcf9f3;
-  margin-top: 12px;
+  margin-top: 0.5rem;
+  width: 40rem;
 }
 
 header .options a {
-  margin-right: 15px;
-  font-size: 1.3rem;
+  margin-right: 2%;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #452824;
   text-decoration: none;

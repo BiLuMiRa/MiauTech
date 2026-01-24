@@ -1,22 +1,22 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header_miaudota() {
     return (
     <header>
         <div className="imgs-header">
-            <img src="./imgs/miaudota/Dog1.png" alt="dog1" id="dog1" />
-            <img src="./imgs/miaudota/logo.png" alt="logo" id="logo" />
+            <Image src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaudota/Dog1.png"  width={0} height={0} sizes='100vw' style={{ width: '7rem', height: 'auto' }} alt="dog1" id="dog1" />
+            <Image src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaudota/logo.png" width={0} height={0} sizes='100vw' style={{ width: '9.5rem', height: 'auto' }} alt="logo" id="logo" />
        </div>
        <div className="options">
             <Link href="/MiauTech/">Início</Link>
             <Link href="/MiauTech/pages/miau-juda-ini.html">Miau-juda</Link>
             <Link href="/miaudota/donate">Doar</Link>
             <Link href="/miaudota/eventos">Eventos de adoção</Link>
-            <Link href="">
-            <img
-            src="./imgs/miaudota/user-base.png"
-            alt="base-user-profile"
-            id="user"/>
+            <Link href="" id='user'>
+                <Image
+                src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/users/user-base.png"
+                width={0} height={0} sizes='100vw' style={{ width: '3.5rem', height: 'auto', 'border-radius': '100px' }} alt="base-user-profile"/>
             </Link>
         </div>
     </header>
