@@ -9,7 +9,7 @@ export default function Header_miaudota() {
             <Image src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaudota/logo.png" width={0} height={0} sizes='100vw' style={{ width: '9.5rem', height: 'auto' }} alt="logo" id="logo" />
        </div>
        <div className="options">
-            <Link href="/MiauTech/">Início</Link>
+            <Link href="/">Início</Link>
             <Link href="/MiauTech/pages/miau-juda-ini.html">Miau-juda</Link>
             <Link href="/miaudota/donate">Doar</Link>
             <Link href="/miaudota/eventos">Eventos de adoção</Link>
