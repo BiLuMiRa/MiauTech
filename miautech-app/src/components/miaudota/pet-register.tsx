@@ -1,11 +1,15 @@
 "use client"
 
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 import { supabase } from "../../lib/supabase.js"
 function PetRegister(){
     // PEGANDO INFORMAÇÕES DO FORMULÁRIO
+    const [file,setFile] = useState<File | null>(null)
+
     async function register(event: FormEvent<HTMLFormElement>){
         event.preventDefault()
+
+        if(!file) return alert("Selecione uma imagem do pet!")
 
         const formData = new FormData(event.currentTarget)
 
@@ -34,9 +38,24 @@ function PetRegister(){
         const vermi = formData.get("vermi")
         const defici = formData.get("defici")
 
+        const fileExt = file.name.split(".").pop()
+        const fileName = `${Math.random()}.${fileExt}`
+        const filePath = `pets/${fileName}`
+
+        const{error : uploadError} = await supabase.storage
+        .from("images")
+        .upload(filePath, file)
+
+        if(uploadError) throw uploadError
+
+        const {data: {publicUrl}} = supabase.storage
+        .from("images")
+        .getPublicUrl(filePath) 
+
+
         const {error} = await supabase
         .from('Registro_de_pets')
-        .insert([{ name:nome, age:String(idade)+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici },])
+        .insert([{ name:nome, age:String(idade)+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici, image: publicUrl }])
 
         if (error) {
             console.error(error)
@@ -131,6 +150,15 @@ function PetRegister(){
                     <option value={"Pássaro"}>Pássaro</option>
                 </select>
             </label>
+
+{/* -----------FOTO DO PET------------------ */} 
+            <label className="font-bold mb-1">Foto:</label>
+                <input 
+                type="file" 
+                accept="image/*" 
+                onChange={(event) => setFile(event.target.files?.[0] || null)}
+                className="text-sm"
+                />           
 
 {/* -----------DESCRIÇÃO------------------ */}
             <label htmlFor="desc">

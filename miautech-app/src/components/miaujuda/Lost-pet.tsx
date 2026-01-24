@@ -1,16 +1,17 @@
 "use client"
 
 import {supabase} from "../../lib/supabase"
-import { useState } from "react";
+import {useState} from "react"
 
-function FoundPet(){
-    const [file,setFile] = useState<File | null>(null);
+function LostPet(){
+    const [file,setFile] = useState<File | null>(null)
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (!file) return alert("Selecione uma imagem do pet!");
+    const handleSubmit = async(e : React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
 
-        const formData = new FormData(e.currentTarget);
+        if(!file) return alert("Selecione uma imagem do pet!")
+        
+        const formData = new FormData(e.currentTarget)
 
         const date = formData.get("date")
         const location = formData.get("location")
@@ -21,13 +22,12 @@ function FoundPet(){
         const namePet = formData.get("nome_P")
         const name = formData.get("nome")
         const size = formData.get("porte")
-        const genero = formData.get("genero")            
-
+        const genero = formData.get("genero")
 
         try{
             const fileExt = file.name.split(".").pop();
             const fileName = `${Math.random()}.${fileExt}`;
-            const filePath = `foundPets/${fileName}`;
+            const filePath = `lostPets/${fileName}`;
 
             const {error : uploadError } = await supabase.storage
                 .from("images")
@@ -40,7 +40,7 @@ function FoundPet(){
                 .getPublicUrl(filePath)
 
             const {error: insertError} = await supabase
-                .from("FoundPet")
+                .from("LostPet")
                 .insert([{
                     date: date,
                     contact: contact,
@@ -189,4 +189,4 @@ function FoundPet(){
     )
 }
 
-export default FoundPet
+export default LostPet
