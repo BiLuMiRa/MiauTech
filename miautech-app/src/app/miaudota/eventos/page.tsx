@@ -1,6 +1,6 @@
 'use client'
 import Header_miaudota from "@/src/components/miaudota/Header-miaudota"
-import EventosMiaudota from "@/src/components/miaudota/eventosMiaudota"
+import EventosMiaudota from "@/src/components/miaudota/EventosMiaudota"
 import Footer_miaudota from "@/src/components/miaudota/Footer-miaudota"
 import '../../globals.css'
 import { Fredoka } from "next/font/google";
