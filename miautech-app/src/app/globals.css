@@ -1,4 +1,4 @@
- @import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap");
+
 
 * {
   margin: 0%;
@@ -15,7 +15,7 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Fredoka', "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -31,7 +31,7 @@
 
 body {
   background-color: #fcf9f3;
-  font-family: fredoka, "Segoe UI", sans-serif;
+  font-family: 'Fredoka', "Segoe UI", sans-serif;
   font-weight: 400;
   width: 100%;
   min-height: 100vh;
@@ -54,44 +54,43 @@ header {
 }
 
 header #logo {
-  width: 150px;
-  margin-top: 10px;
+  margin-top: 5%;
 }
 
 header #dog1 {
-  height: 75px;
   position: relative;
   top: 15px;
 }
 
 header .imgs-header {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
-  margin-left: 25px;
   height: auto;
+  margin-left: 1.5%;
 }
 
 header #user {
-  height: 45px;
-  border-radius: 100px;
+  display: inline-flex;
 }
 
 header .options {
-  text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  text-align: center;
   align-items: center;
   color: #fcf9f3;
-  margin-top: 12px;
+  margin-top: 0.5rem;
+  width: 40rem;
 }
 
 header .options a {
-  margin-right: 15px;
-  font-size: 1.3rem;
+  margin-right: 2%;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #452824;
   text-decoration: none;
+  margin: 0 0.9rem ;
 }
 
 header .options a:hover {
@@ -478,8 +477,10 @@ header .options a:hover {
 }
 
 .pq-doar .imgs-pets {
-  align-items: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
 }
 
 .pq-doar .imgs-pets img {
@@ -497,6 +498,7 @@ header .options a:hover {
   font-size: 1.8rem;
   margin-left: 100px;
   margin-right: 100px;
+  margin-bottom: 4%;
 }
 
 .pq-doar button {
@@ -510,14 +512,14 @@ header .options a:hover {
 /*------------EVENTS PAGE-------------*/
 
 .events {
-  margin-top: 0%;
+  margin-top: 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
   align-items: center;
   place-items: center;
-  gap: 5%;
-  padding: 5%;
+  padding: 0 5%; 
+  gap: 2%;
 }
 
 .card-evento {
@@ -526,11 +528,10 @@ header .options a:hover {
   align-items: center;
   background-color: #eee7d4;
   padding: 10px;
-  width: 780px;
-  height: 410px;
+  width: 50rem;
+  height: 100%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
-  aspect-ratio: 3 / 4;
 }
 
 .card-evento img {
@@ -539,9 +540,8 @@ header .options a:hover {
   display: block;
 }
 
-
 .card-evento .nome-evento {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 500;
   text-decoration: none;
   color: #452824;
@@ -549,7 +549,7 @@ header .options a:hover {
 }
 
 .card-evento .local-evento {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   justify-content: center;
   align-items: center;
   color: #3f3f3f;
@@ -567,6 +567,7 @@ footer {
   gap: 20px;
   text-align: center;
   margin-top: 80px;
+  font-size: 1.5rem;
 }
 
 footer .logo-footer {

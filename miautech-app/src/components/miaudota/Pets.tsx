@@ -39,7 +39,7 @@ export default function Pets() {
     return (
         <section className="pets">
             {data.map(pet => (
-                    <Link key={pet.id} href={`/miaujuda/details/${pet.id}`}>
+                    <Link key={pet.id} href={`/miaudota/detailsPet/${pet.id}`}>
                         <img src="./imgs/miaudota/pata1.png" className="pata1" alt="Pata"/>
                             <div>
                                 <img src={pet.image} alt="Imagem do Pet"/>

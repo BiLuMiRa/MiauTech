@@ -30,7 +30,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "src/app/page.jsx",
-    "src/components/miaudota/Header-miaudota.jsx"
+    "src/components/miaudota/Header-miaudota.tsx"
   ],
   "exclude": ["node_modules"]
 }
