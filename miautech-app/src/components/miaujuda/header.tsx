@@ -14,7 +14,7 @@ export function Header(){
             <div className="options">
 
             <Link href="/">Miau-Dota</Link>
-            <Link href="">Perdi meu pet</Link>
+            <Link href="/miaujuda/lostpet/">Perdi meu pet</Link>
             <Link href="/miaujuda/foundpet/">Achei um pet</Link>
             <Link href="">
                 <img
