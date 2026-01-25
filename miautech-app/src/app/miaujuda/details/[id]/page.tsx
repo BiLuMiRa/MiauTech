@@ -16,7 +16,7 @@ export default async function DetailsVets({
     params: Promise<{ id: string}>
 }) {
 
-    
+    const {id} = await params
 
     const {data: vet, error} = await supabase
     .from("Registro_de_vets")
