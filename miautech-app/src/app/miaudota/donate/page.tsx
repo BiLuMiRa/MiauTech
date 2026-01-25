@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image"
 import Header_miaudota from "@/src/components/miaudota/Header-miaudota"
 import Footer_miaudota from "@/src/components/miaudota/Footer-miaudota"

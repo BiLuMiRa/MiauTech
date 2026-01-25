@@ -512,14 +512,14 @@ header .options a:hover {
 /*------------EVENTS PAGE-------------*/
 
 .events {
-  margin-top: 0%;
+  margin-top: 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
   align-items: center;
   place-items: center;
-  gap: 5%;
-  padding: 5%;
+  padding: 0 5%; 
+  gap: 2%;
 }
 
 .card-evento {
@@ -528,11 +528,10 @@ header .options a:hover {
   align-items: center;
   background-color: #eee7d4;
   padding: 10px;
-  width: 780px;
-  height: 410px;
+  width: 50rem;
+  height: 100%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
-  aspect-ratio: 3 / 4;
 }
 
 .card-evento img {
@@ -541,9 +540,8 @@ header .options a:hover {
   display: block;
 }
 
-
 .card-evento .nome-evento {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 500;
   text-decoration: none;
   color: #452824;
@@ -551,7 +549,7 @@ header .options a:hover {
 }
 
 .card-evento .local-evento {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   justify-content: center;
   align-items: center;
   color: #3f3f3f;
