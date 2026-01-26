@@ -16,7 +16,7 @@ export default function Header_miaudota() {
             <Link href="" id='user'>
                 <Image
                 src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/users/user-base.png"
-                width={0} height={0} sizes='100vw' style={{ width: '3.5rem', height: 'auto', 'border-radius': '100px' }} alt="base-user-profile"/>
+                width={0} height={0} sizes='100vw' style={{ width: '3.5rem', height: 'auto', 'borderRadius': '100px' }} alt="base-user-profile"/>
             </Link>
         </div>
     </header>

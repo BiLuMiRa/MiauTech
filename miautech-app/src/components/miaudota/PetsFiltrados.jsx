@@ -128,10 +128,7 @@ export default function PetsFiltrados({
   }
 
   useEffect(() => {
-    console.log("buscar mudou:", buscar);
-    console.log("btnSelecionados:", btnSelecionados);
     if (buscar) {
-  
         const parametros = arraySelecionados();
         filtrarPets(parametros);
     }
