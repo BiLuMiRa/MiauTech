@@ -19,7 +19,7 @@ Tem por objetivo conectar tutores de pets a veterinários qualificados próximos
 * Seção "Perdi um Pet" (em caso de desaparecimento)
 * Seção "Encontrei um Pet" (em caso de encontrar animais desaparecidos)
 
-[Acesse o nosso site!](https://bilumira.github.io/MiauTech/)
+[Acesse o nosso site!]([https://](https://miau-tech.vercel.app/))
 
 ## Tecnologias utilizadas
 
