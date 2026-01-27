@@ -11,6 +11,7 @@ import Filter from "../components/miaudota/Filter";
 import Popup from "../components/miaudota/Popup";
 import Pets from "../components/miaudota/Pets";
 import Footer_miaudota from "../components/miaudota/Footer-miaudota";
+import LoginUser from "../components/miaudota/Login-user";
 import { Fredoka } from "next/font/google";
 
 const fredoka = Fredoka({ 
@@ -20,17 +21,21 @@ const fredoka = Fredoka({
 
 export default function Home() {
   const [popupAberto, setpopupAberto] = useState(false);
+  const [loginAberto, setLoginAberto] = useState(false);
 
   return (
-    <div>
-      <Header_miaudota />
-      <main className="content">
-        <Slides />
-        <Filter setpopupAberto={setpopupAberto} />
-        {popupAberto && <Popup setpopupAberto={setpopupAberto} />}
-        <Pets />
-      </main>
-      <Footer_miaudota />
-    </div>
+    <>
+      {loginAberto && <LoginUser setLoginAberto={setLoginAberto} loginAberto={loginAberto}/>}
+        <div className={loginAberto ? "blur-2xl" : ""}>
+          <Header_miaudota setLoginAberto={setLoginAberto} loginAberto={loginAberto} />
+          <main className="content">
+            <Slides />
+            <Filter setpopupAberto={setpopupAberto} />
+            {popupAberto && <Popup setpopupAberto={setpopupAberto} />}
+            <Pets />
+          </main>
+          <Footer_miaudota />
+        </div>
+      </>
   );
 }
