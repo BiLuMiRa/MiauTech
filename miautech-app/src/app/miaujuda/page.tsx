@@ -16,9 +16,9 @@ export default async function Home() {
   if (error) return <div>Erro: {error.message}</div>;
 
   return (
-    <main>
+    <main className="vets">
       {data.map(vet => (
-        <div key={vet.id} className="vets">
+        <div key={vet.id}>
           <Link href={`/miaujuda/details/${vet.id}`}>
           <div>
             <img src={vet.image} alt="vet"/>

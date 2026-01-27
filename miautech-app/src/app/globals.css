@@ -15,7 +15,7 @@
 }
 
 :root {
-  font-family: 'Fredoka', "Segoe UI", sans-serif;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -31,7 +31,7 @@
 
 body {
   background-color: #fcf9f3;
-  font-family: 'Fredoka', "Segoe UI", sans-serif;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
   font-weight: 400;
   width: 100%;
   min-height: 100vh;
@@ -64,7 +64,7 @@ header #dog1 {
 
 header .imgs-header {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   height: auto;
   margin-left: 1.5%;
@@ -90,7 +90,7 @@ header .options a, header .options button{
   font-weight: 500;
   color: #452824;
   text-decoration: none;
-  margin: 0 0.9rem ;
+  margin: 0 0.9rem;
 }
 
 header .options a:hover {
@@ -218,7 +218,7 @@ header .options a:hover {
   border-radius: 10px;
   background-color: #ffffff;
   width: 270px;
-  position: absolute; 
+  position: absolute;
   z-index: 1; /* indica camada mais alta */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -232,6 +232,17 @@ header .options a:hover {
   padding: 8px;
   margin-left: 5px;
   color: #000000;
+}
+
+.btnOpcao-ativa {
+  background-color: #e58233;
+  border: 1px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: none;
+  padding: 8px;
+  margin-left: 5px;
+  color: white;
 }
 
 .btnOpcao:hover {
@@ -266,6 +277,10 @@ header .options a:hover {
   width: 20px;
   height: 40px;
   margin-left: 140px;
+}
+
+#fechar:hover {
+  color: #e58233;
 }
 
 #limpar-buscar {
@@ -336,7 +351,7 @@ header .options a:hover {
 
 .pets a {
   text-decoration: none;
-  height: 100% ;
+  height: 100%;
 }
 
 .pets .name {
@@ -367,47 +382,64 @@ header .options a:hover {
 
 /*-----------DETAILS PET---------*/
 .infos-pet {
-  margin: 50px;
+  margin: 4%;
   display: flex;
+  justify-content: left;
+  width: fit-content;
   color: #452824;
 }
 
 .infos-pet .foto-pet {
-  background-color: #fff;
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background-color: #f2f2f2;
+  width: 28rem;
+  height: 40%;
+  padding: 1%;
+  padding-bottom: 0;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-family: fredoka;
+  margin: 0;
 }
 
 .infos-pet .foto-pet #pet-image {
-  margin: 10px;
-  width: 300px;
+  width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
 }
 
 .infos-pet .foto-pet #pata1 {
-  width: 90px;
+  width: 7.5rem;
   position: relative;
-  left: 83%;
-  transform: rotate(343deg);
+  left: 50%;
+  top: 4%;
+  transform: rotate(20deg);
 }
 
 .infos-pet .dados-pet {
-  padding-left: 60px;
+  margin-left: 7%;
 }
 
 .infos-pet .dados-pet h2 {
-  margin: 0px;
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 500;
+  width: fit-content;
+  height: fit-content;
 }
 
 .infos-pet .dados-pet h3 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 300;
-  margin: 0px;
   padding-right: 10px;
+}
+
+.infos-pet .dados-pet #pet-desc {
+  margin-top: 1.5%;
+  font-size: 2rem;
+  text-align: justify;
 }
 
 .infos-pet .dados-pet .idade-sexo {
@@ -417,8 +449,10 @@ header .options a:hover {
 }
 
 .infos-pet .dados-pet button {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   background-color: #452824;
+  font-weight: 500;
+  color: #f2f2f2;
   border: none;
   border-radius: 12px;
   padding-left: 10px;
@@ -426,13 +460,7 @@ header .options a:hover {
   margin-left: 20px;
 }
 
-.infos-pet .dados-pet #pet-desc {
-  margin-top: 15px;
-  font-size: 1.8rem;
-  text-align: justify;
-}
-
-.infos-pet .dados-pet button:hover{
+.infos-pet .dados-pet button:hover {
   cursor: pointer;
 }
 
@@ -446,10 +474,9 @@ header .options a:hover {
   margin: 80px auto 100px auto;
   border: transparent;
   border-spacing: 25px;
-  
 }
 
-.tabela-infos tr{
+.tabela-infos tr {
   background-color: #eee7d4;
 }
 
@@ -518,7 +545,7 @@ header .options a:hover {
   justify-content: center;
   align-items: center;
   place-items: center;
-  padding: 0 5%; 
+  padding: 0 5%;
   gap: 2%;
 }
 
@@ -675,10 +702,9 @@ footer .logo-footer {
 }
 
 @media (width <= 820px) {
-  header .options a{
+  header .options a {
     font-size: 1.1rem;
   }
-
 }
 
 @media (width <= 770px) {

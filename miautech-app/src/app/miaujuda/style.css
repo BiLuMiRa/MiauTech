@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap");
 
-*{
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
@@ -21,7 +21,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #FCF9F3;
+  background-color: #fcf9f3;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,14 +29,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-  background-color: #FCF9F3;
-  font-family: fredoka, 'Segoe UI', sans-serif; 
+body {
+  background-color: #fcf9f3;
+  font-family: fredoka, "Segoe UI", sans-serif;
   font-weight: 400;
   width: 100%;
 }
 
-section, div {
+section,
+div {
   max-width: 100%;
 }
 
@@ -97,13 +98,15 @@ header .options a:hover {
 }
 
 /* ---------------VETERIANRIOS---------------*/
-.vets{
+.vets {
+  margin: 5%;
   margin-top: 1%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 50px;
   justify-content: center;
   align-items: center;
   place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
 }
 
 .vets div {
@@ -112,12 +115,12 @@ header .options a:hover {
   align-items: center;
   color: black;
   background-color: #f2f2f2;
-  padding: 10px;
+  padding: 7%;
   width: 250px;
-  height: 350px;
-  margin: 10% 15% 5% 1%;
+  height: 345px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
+  margin: 0; 
 }
 
 .vets div img {
@@ -141,7 +144,8 @@ header .options a:hover {
   text-align: center;
 }
 
-.vets .specialty, .location{
+.vets .specialty,
+.location {
   margin: 0%;
 }
 
@@ -170,13 +174,13 @@ header .options a:hover {
 }
 
 .infos-vet .foto-vet {
-  width: 300px;                   
+  width: 300px;
   height: 300px;
   background-color: #ffffff;
-  border-radius: 18px;            
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   position: relative;
-  padding: 20px;                 
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,8 +191,8 @@ header .options a:hover {
 .infos-vet .foto-vet #vet-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;               
-  border-radius: 12px;             
+  object-fit: cover;
+  border-radius: 12px;
   margin: 0;
 }
 
@@ -239,7 +243,7 @@ header .options a:hover {
   font-size: 1.3rem;
 }
 
-.infos-vet .dados-vet button:hover{
+.infos-vet .dados-vet button:hover {
   cursor: pointer;
 }
 /*-----------FOOTER---------*/
@@ -250,8 +254,8 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  flex-wrap: wrap;  
-  gap: 20px;            
+  flex-wrap: wrap;
+  gap: 20px;
   text-align: center;
 }
 
