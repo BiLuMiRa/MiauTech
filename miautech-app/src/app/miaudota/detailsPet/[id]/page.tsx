@@ -4,6 +4,7 @@ import Image from "next/image";
 import { supabase } from "@/src/lib/supabase";
 import '../../../globals.css'
 import { Fredoka } from "next/font/google";
+import ChatSection from "@/src/components/miaudota/ChatSection";
 
 const fredoka = Fredoka({ 
   subsets: ["latin"], 
@@ -57,7 +58,9 @@ export default async function petDetails({params}: PetDetailsProps) {
                     <h3 className="sexopet">{pet.sexo}</h3>
                     <h3>|</h3>
                     <h3 className="idadepet">{pet.age}</h3>
-                    <button className="btnAdotar">Quero Adotar!</button>
+
+                    <ChatSection pet={pet} />
+
                     </div>
                     <p className="desc-pet" id="pet-desc">{pet.desc}</p>
                 </div>
