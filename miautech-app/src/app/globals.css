@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-* {
+/* * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-}
+} */
 
 .fredoka {
   font-family: "Fredoka", sans-serif;
@@ -84,7 +84,7 @@ header .options {
   width: 40rem;
 }
 
-header .options a {
+header .options a, header .options button{
   margin-right: 2%;
   font-size: 1.5rem;
   font-weight: 500;
@@ -717,6 +717,29 @@ footer .logo-footer {
     justify-content: space-between;
   }
 }
+
+/* -------------- LOGIN ----------------- */
+
+#userLogin {
+  animation: popup 200ms linear;
+}
+
+/* ---------------- ANIMAÇÕES --------------- */
+
+@keyframes popup {
+  0% {
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: end;
+    scale: 0%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
+
+
 
 /* :root {
   --background: #ffffff;
