@@ -66,7 +66,7 @@ export default async function petDetails({params}: PetDetailsProps) {
             <table className="tabela-infos">
                 <tr >
                     <th>Vacinas</th>
-                    <th>{pet.vacina !== null ? "SIM" : "NÃO"}</th>
+                    <th>{pet.vacinas !== null ? "SIM" : "NÃO"}</th>
                     <th>{pet.vacinas}</th>
                 </tr>
 
