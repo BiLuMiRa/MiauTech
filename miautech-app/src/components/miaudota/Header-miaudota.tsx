@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function Header_miaudota(props) {
+export default function Header_miaudota(props:any) {
     return (
     <header>
         <div className="imgs-header">
@@ -19,7 +19,7 @@ export default function Header_miaudota(props) {
                 <p className='hidden'>texto</p>
                 <Image
                 src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/users/user-base.png"
-                width={0} height={0} sizes='100vw' style={{ width: '3.5rem', height: 'auto', 'border-radius': '100px' }} alt="base-user-profile"/>
+                width={0} height={0} sizes='100vw' style={{ width: '3.5rem', height: 'auto', 'borderRadius': '100px' }} alt="base-user-profile"/>
             </button>
         </div>
     </header>
