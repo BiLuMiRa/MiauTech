@@ -7,7 +7,7 @@ import '../../globals.css'
 
 export default function donate() {
     return (
-        <body>
+        <div>
             <Header_miaudota/>
             <div className="pq-doar">
                 <h1>Por que doar?</h1>
@@ -29,7 +29,7 @@ export default function donate() {
                 <button>Apoie a causa</button>
             </div>
             <Footer_miaudota/>
-        </body>
+        </div>
         
 
     )

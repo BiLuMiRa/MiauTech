@@ -4,6 +4,7 @@ import Image from "next/image";
 import { supabase } from "@/src/lib/supabase";
 import '../../../globals.css'
 import { Fredoka } from "next/font/google";
+import ChatSection from "@/src/components/miaudota/ChatSection";
 
 const fredoka = Fredoka({ 
   subsets: ["latin"], 
@@ -47,8 +48,8 @@ export default async function petDetails({params}: PetDetailsProps) {
             <Header_miaudota/>
             <div className="infos-pet">
                 <div className="foto-pet">
-                    <Image id="pet-image" src={pet.image} alt="foto-pet" width={0} height={0} sizes="100vw" style={{ width: '20%', height: 'auto' }}/>
-                    <Image src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaudota/pata1.png" alt="pata1" id="pata1" width={0} height={0} sizes="100vw" style={{ width: '20%', height: 'auto' }}/>
+                    <Image id="pet-image" src={pet.image} alt="foto-pet" width={800} height={600}/>
+                    <Image src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miaudota/pata1.png" alt="pata1" id="pata1" width={800} height={600}/>
                 </div>
 
                 <div className="dados-pet">
@@ -57,7 +58,9 @@ export default async function petDetails({params}: PetDetailsProps) {
                     <h3 className="sexopet">{pet.sexo}</h3>
                     <h3>|</h3>
                     <h3 className="idadepet">{pet.age}</h3>
-                    <button className="btnAdotar">Quero Adotar!</button>
+
+                    <ChatSection pet={pet} />
+
                     </div>
                     <p className="desc-pet" id="pet-desc">{pet.desc}</p>
                 </div>
@@ -66,7 +69,7 @@ export default async function petDetails({params}: PetDetailsProps) {
             <table className="tabela-infos">
                 <tr >
                     <th>Vacinas</th>
-                    <th>{pet.vacina !== null ? "SIM" : "NÃO"}</th>
+                    <th>{pet.vacinas !== null ? "SIM" : "NÃO"}</th>
                     <th>{pet.vacinas}</th>
                 </tr>
 

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-* {
+/* * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-}
+} */
 
 .fredoka {
   font-family: "Fredoka", sans-serif;
@@ -84,7 +84,7 @@ header .options {
   width: 40rem;
 }
 
-header .options a {
+header .options a, header .options button{
   margin-right: 2%;
   font-size: 1.5rem;
   font-weight: 500;
@@ -382,47 +382,64 @@ header .options a:hover {
 
 /*-----------DETAILS PET---------*/
 .infos-pet {
-  margin: 50px;
+  margin: 4%;
   display: flex;
+  justify-content: left;
+  width: fit-content;
   color: #452824;
 }
 
 .infos-pet .foto-pet {
-  background-color: #fff;
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background-color: #f2f2f2;
+  width: 28rem;
+  height: 40%;
+  padding: 1%;
+  padding-bottom: 0;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-family: fredoka;
+  margin: 0;
 }
 
 .infos-pet .foto-pet #pet-image {
-  margin: 10px;
-  width: 300px;
+  width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
 }
 
 .infos-pet .foto-pet #pata1 {
-  width: 90px;
+  width: 7.5rem;
   position: relative;
-  left: 83%;
-  transform: rotate(343deg);
+  left: 50%;
+  top: 4%;
+  transform: rotate(20deg);
 }
 
 .infos-pet .dados-pet {
-  padding-left: 60px;
+  margin-left: 7%;
 }
 
 .infos-pet .dados-pet h2 {
-  margin: 0px;
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 500;
+  width: fit-content;
+  height: fit-content;
 }
 
 .infos-pet .dados-pet h3 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 300;
-  margin: 0px;
   padding-right: 10px;
+}
+
+.infos-pet .dados-pet #pet-desc {
+  margin-top: 1.5%;
+  font-size: 2rem;
+  text-align: justify;
 }
 
 .infos-pet .dados-pet .idade-sexo {
@@ -432,19 +449,15 @@ header .options a:hover {
 }
 
 .infos-pet .dados-pet button {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   background-color: #452824;
+  font-weight: 500;
+  color: #f2f2f2;
   border: none;
   border-radius: 12px;
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 20px;
-}
-
-.infos-pet .dados-pet #pet-desc {
-  margin-top: 15px;
-  font-size: 1.8rem;
-  text-align: justify;
 }
 
 .infos-pet .dados-pet button:hover {
@@ -704,6 +717,29 @@ footer .logo-footer {
     justify-content: space-between;
   }
 }
+
+/* -------------- LOGIN ----------------- */
+
+#userLogin {
+  animation: popup 200ms linear;
+}
+
+/* ---------------- ANIMAÇÕES --------------- */
+
+@keyframes popup {
+  0% {
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: end;
+    scale: 0%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
+
+
 
 /* :root {
   --background: #ffffff;
