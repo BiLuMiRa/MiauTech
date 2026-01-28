@@ -75,9 +75,9 @@ export default function Chat({pet}: {pet : any}){
 
 
 return (
-    <div className="max-w-md mx-auto my-10 bg-white shadow-xl rounded-[2rem] border border-orange-100 overflow-hidden">
+    <div className="max-w-md ml-220 my-10 bg-white shadow-xl rounded-[2rem] border border-orange-100 overflow-hidden">
       {/* Cabeçalho */}
-      <div className="bg-orange-500 p-4 text-white text-center">
+      <div className="bg-orange-400 p-4 text-white text-center">
         <h3 className="font-bold">Chat sobre {pet?.name || "o Pet"}</h3>
         <p className="text-[10px] opacity-80">ID da Sala: {roomId}</p>
       </div>
