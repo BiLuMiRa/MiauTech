@@ -44,7 +44,7 @@ div {
 
 /*------------MENU/HEADER----------*/
 header {
-  background-color: #eee7d4;
+  background-color: #eee7d4 !important; 
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

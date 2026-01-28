@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { supabase } from "../../lib/supabase.js"
 import { FormEvent } from 'react'
 import Image from 'next/image.js'
-export default function LoginUser(props){
+export default function LoginUser(props:any){
     async function authentication(event:FormEvent<HTMLFormElement>){
         event.preventDefault()
 

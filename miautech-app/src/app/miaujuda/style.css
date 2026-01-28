@@ -43,7 +43,7 @@ div {
 
 /*------------MENU----------*/
 header {
-  background-color: #eee7d4;
+  background-color:#f2f2f2;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -97,7 +97,7 @@ header .options a:hover {
   color: #28aef8;
 }
 
-/* ---------------VETERIANRIOS---------------*/
+/* ---------------VETERINÁRIOS---------------*/
 .vets {
   margin: 5%;
   margin-top: 1%;
@@ -106,7 +106,7 @@ header .options a:hover {
   justify-content: center;
   align-items: center;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .vets div {
@@ -120,7 +120,7 @@ header .options a:hover {
   height: 345px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
-  margin: 0; 
+  margin: 0;
 }
 
 .vets div img {
@@ -165,7 +165,7 @@ header .options a:hover {
   transform: rotate(350deg);
 }
 
-/*-----------DETAILS PET---------*/
+/*-----------DETAILS VET---------*/
 .infos-vet {
   margin: 30px;
   display: flex;
@@ -248,7 +248,7 @@ header .options a:hover {
 }
 /*-----------FOOTER---------*/
 footer {
-  background-color: #28aef8;
+  background-color: #439dce;
   color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
