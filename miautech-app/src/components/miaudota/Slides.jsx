@@ -29,9 +29,6 @@ export default function Slides() {
         }}
 
       >
-        <div className="swiper-pagination"></div>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
         {slides.map((campanha) => (
           <SwiperSlide key={campanha.id} className="swiper-slide">
             <img src={campanha.image} alt={campanha.alt} />
