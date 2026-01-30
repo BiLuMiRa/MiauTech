@@ -14,6 +14,7 @@ import Pets from "../components/miaudota/Pets";
 import Footer_miaudota from "../components/miaudota/Footer-miaudota";
 import LoginUser from "../components/miaudota/Login-user";
 import { Fredoka } from "next/font/google";
+import Signin from "../components/miaudota/SignIn-user";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -24,14 +25,18 @@ const fredoka = Fredoka({
 export default function Home() {
   const [popupAberto, setpopupAberto] = useState(false);
   const [loginAberto, setLoginAberto] = useState(false);
+  // const [cadastroAberto, setCadastroAberto] = useState(false);
   const [btnSelecionados, setbtnSelecionados] = useState([]);
   const [buscar, setBuscar] = useState(false);
 
   return (
     <>
-      {loginAberto && <LoginUser setLoginAberto={setLoginAberto} loginAberto={loginAberto}/>}
-        <div className={loginAberto ? "blur-2xl" : ""}>
-          <Header_miaudota setLoginAberto={setLoginAberto} loginAberto={loginAberto} />
+      {(loginAberto /*&& !cadastroAberto*/ ) && <LoginUser setLoginAberto={setLoginAberto} loginAberto={loginAberto} /*setCadastroAberto={setCadastroAberto}*//>}
+
+      {/* {(cadastroAberto && !loginAberto) && <Signin cadastroAberto={cadastroAberto} setLoginAberto={setLoginAberto} setCadastroAberto={setCadastroAberto}/>} */}
+
+        <div className={(loginAberto /*|| cadastroAberto*/) ? "blur-2xl" : ""}>
+          <Header_miaudota setLoginAberto={setLoginAberto} loginAberto={loginAberto} /*setCadastroAberto={setCadastroAberto}*//>
           <main className="content">
             <Slides />
             <Filter setpopupAberto={setpopupAberto} />
