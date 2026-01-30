@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-* {
+/* * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-} 
+}  */
 
 body {
   overflow: hidden;
@@ -724,13 +724,27 @@ footer .logo-footer {
 
 /* -------------- LOGIN ----------------- */
 
-#userLogin {
-  animation: popup 200ms linear;
+#openUserLogin {
+  animation: openPopUp 200ms linear;
 }
+
+/* #closeUserLogin{
+  animation: closePopUp 200ms linear;
+} */
+
+.openCad{
+  animation: opencad 300ms linear;
+}
+
+.closeCad{
+  animation: closecad 300ms linear;
+}
+
+
 
 /* ---------------- ANIMAÇÕES --------------- */
 
-@keyframes popup {
+@keyframes openPopUp {
   0% {
     top: 0%;
     right: 0%;
@@ -743,6 +757,39 @@ footer .logo-footer {
   }
 }
 
+/* @keyframes closePopUp {
+  100% {
+    top: 0%;
+    right: 0%;
+    display: flex;
+    justify-content: end;
+    scale: 0%;
+  }
+  0% {
+    scale: 100%;
+  }
+} */
+
+@keyframes opencad {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes closecad {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+    display: hidden;
+  }
+}
 
 
 /* :root {

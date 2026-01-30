@@ -62,6 +62,7 @@ function PetRegister(){
             alert(error.message)
         } else {
             alert("Pet cadastrado com sucesso")
+            data.
             event.currentTarget.reset()
         }
     }

@@ -15,7 +15,10 @@ export default function Header_miaudota(props:any) {
             <Link href="/miaujuda">Miau-juda</Link>
             <Link href="/miaudota/donate">Doar</Link>
             <Link href="/miaudota/eventos">Eventos de adoção</Link>
-            <button className='hover:cursor-pointer' id='user' onClick={() => {props.setLoginAberto(!props.loginAberto)}}>
+            <button className='hover:cursor-pointer' id='user' onClick={() => {
+                props.setLoginAberto(true);
+                // props.setCadastroAberto(false);
+            }}>
                 <p className='hidden'>texto</p>
                 <Image
                 src="https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/users/user-base.png"
