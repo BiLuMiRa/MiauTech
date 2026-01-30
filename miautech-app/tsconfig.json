@@ -31,6 +31,6 @@
     "**/*.mts",
     "src/app/page.jsx",
     "src/components/miaudota/Header-miaudota.tsx"
-  ],
+, "src/components/miaudota/SignUp-user"  ],
   "exclude": ["node_modules"]
 }
