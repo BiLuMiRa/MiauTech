@@ -1,10 +1,21 @@
 "use client"
 
-import { FormEvent, useState } from "react"
+import { FormEvent, useState, useEffect } from "react"
 import { supabase } from "../../lib/supabase.js"
+import { Session } from '@supabase/supabase-js'
 function PetRegister(){
     // PEGANDO INFORMAÇÕES DO FORMULÁRIO
     const [file,setFile] = useState<File | null>(null)
+    const [user, setUser] = useState<Session | null>(null)
+
+    useEffect(() => {
+        const sessao = async () => {
+            const {
+                data: { session },
+            } = await supabase.auth.getSession()
+            setUser(session)
+        }
+    }, [])
 
     async function register(event: FormEvent<HTMLFormElement>){
         event.preventDefault()
@@ -55,14 +66,13 @@ function PetRegister(){
 
         const {error} = await supabase
         .from('Registro_de_pets')
-        .insert([{ name:nome, age:String(idade)+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici, image: publicUrl }])
+        .insert([{ name:nome, age:String(idade)+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici, image: publicUrl, user_id=user.user.id, }])
 
         if (error) {
             console.error(error)
             alert(error.message)
         } else {
             alert("Pet cadastrado com sucesso")
-            data.
             event.currentTarget.reset()
         }
     }
