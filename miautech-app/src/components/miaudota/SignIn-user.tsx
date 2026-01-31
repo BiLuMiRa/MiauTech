@@ -52,11 +52,12 @@ export default function Signin(props:any){
                 className='gap-10 flex flex-col justify-center items-center w-[60vh] h-[60vh] text-white text-2xl'
             >
                 <Image 
-                    src={""} 
+                    src={"https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miautech/logomiautech.png"} 
                     alt='logo miautech'
                     width={0}
                     height={0}
-                    className="w-50"
+                    sizes="100vw"
+                    className="w-80"
                 ></Image>
                 <form
                     onSubmit={(event) => {signin(event)}}

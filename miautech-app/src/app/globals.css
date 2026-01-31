@@ -740,6 +740,15 @@ footer .logo-footer {
   animation: closecad 300ms linear;
 }
 
+/* -------------MENU------------- */
+
+#abrirMenu{
+  background-color: #000000;
+}
+
+#fecharMenu{
+  display: none;
+}
 
 
 /* ---------------- ANIMAÇÕES --------------- */

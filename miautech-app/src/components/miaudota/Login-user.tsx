@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { supabase } from "../../lib/supabase.js"
-import { FormEvent, use, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Image from 'next/image.js'
 import Signin from './SignIn-user'
 export default function LoginUser(props:any){
@@ -48,10 +48,11 @@ export default function LoginUser(props:any){
                 className='gap-10 flex flex-col justify-center items-center w-[60vh] h-[60vh] text-white text-2xl'
             >
                 <Image 
-                    src={""} 
+                    src={"https://arfzdzzwouqjxjnngtna.supabase.co/storage/v1/object/public/images/miautech/logomiautech.png"} 
                     width={0}
                     height={0}
-                    className='w-50'
+                    sizes='100vw'
+                    className='w-80'
                     alt='logo miautech'
                 ></Image>
                 <form
