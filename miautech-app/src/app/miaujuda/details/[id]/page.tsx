@@ -1,4 +1,6 @@
 import { supabase } from "@/src/lib/supabase"
+import ChatMiaujuda from "@/src/components/miaujuda/Chat_miaujuda"
+import ChatSectionMiaujuda from "@/src/components/miaujuda/ChatSectionMiaujuda"
 
 type Vet = {
     id: string
@@ -41,7 +43,9 @@ export default async function DetailsVets({
                 <h3 className="specialtyvet" id="vet-specialty">{vet.specialty}</h3>
                 <h3>|</h3>
                 <h3 className="locationvet" id="vet-location">{vet.location}</h3>
-                <button className="btnAgendar" style={{color: "aliceblue"}} data-vet-id="1">Consulta</button>
+                
+                <ChatSectionMiaujuda vet={vet} />
+
             </div>
             <p className="vetdesc" id="vet-desc">{vet.description}</p>
         </div>
