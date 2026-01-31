@@ -31,7 +31,7 @@ export default function Chat({pet}: {pet : any}){
         // essa função carrega o historico
         const fetchMessages = async () => {
             const {data}= await supabase
-            .from("chat_messages")
+            .from("chat_messages_miaudota")
             .select("*")
             .eq("room_id",roomId)
             .order("created_at", {ascending : true})
@@ -45,7 +45,7 @@ export default function Chat({pet}: {pet : any}){
         const canal = supabase
         .channel(`room_${roomId}`)
         .on("postgres_changes",
-            { event: 'INSERT', schema: 'public', table: 'chat_messages', filter: `room_id=eq.${roomId}`},
+            { event: 'INSERT', schema: 'public', table: 'chat_messages_miaudota', filter: `room_id=eq.${roomId}`},
             (payload) => {
                 setMessages((prev) => [...prev, payload.new])
             }
@@ -61,7 +61,7 @@ export default function Chat({pet}: {pet : any}){
     if(!newMessage.trim()) return
 
     const { error } = await supabase
-    .from("chat_messages")
+    .from("chat_messages_miaudota")
     .insert([{
         content: newMessage,
         room_id: roomId,
