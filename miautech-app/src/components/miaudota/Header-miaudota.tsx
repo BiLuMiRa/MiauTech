@@ -61,7 +61,7 @@ export default function Header_miaudota(props:any) {
             </button>
         </div>
         <div className='fixed top-20 right-0 z-[1000]' id={state ? 'abrirMenu' : 'fecharMenu'}>
-            <PetRegister />
+            {/* Aqui vai o componente do Menu, vai precisar passar a função de logout como argumento */}
         </div>
     </header>
     )
