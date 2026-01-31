@@ -8,7 +8,7 @@ export default function ChatSectionMiaujuda({vet}: {vet: any}){
 
     return (
         <div>
-            <button className="btnAdotar text-white" onClick={() => setChatOpen(!chatOpen)}>
+            <button className="btnAgendar text-white" onClick={() => setChatOpen(!chatOpen)}>
                 { chatOpen ? "Fechar Chat" : "Marcar consulta"}
             </button>
 
@@ -17,7 +17,7 @@ export default function ChatSectionMiaujuda({vet}: {vet: any}){
                 {/* Botão para fechar dentro do chat se quiser */}
                 <button 
                 onClick={() => setChatOpen(false)}
-                className="relative top-1 left-110 text-white font-bold"
+                className="absolute top-2 right-4 text-white font-bold"
                 >
                 ✕
                 </button>
