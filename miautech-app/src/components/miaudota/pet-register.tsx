@@ -3,7 +3,14 @@
 import { FormEvent, useState, useEffect } from "react"
 import { supabase } from "../../lib/supabase.js"
 import { Session } from '@supabase/supabase-js'
-function PetRegister(){
+
+import { User } from "@supabase/supabase-js"
+
+import { Dispatch, SetStateAction } from "react"
+type PetRegisterProps = {
+    fechar: Dispatch<SetStateAction<boolean>>
+}
+function PetRegister({ fechar }: PetRegisterProps){
     // PEGANDO INFORMAÇÕES DO FORMULÁRIO
     const [file,setFile] = useState<File | null>(null)
     const [user, setUser] = useState<Session | null>(null)
@@ -15,10 +22,12 @@ function PetRegister(){
             } = await supabase.auth.getSession()
             setUser(session)
         }
+        sessao()
     }, [])
 
     async function register(event: FormEvent<HTMLFormElement>){
         event.preventDefault()
+        const form = event.currentTarget
 
         if(!file) return alert("Selecione uma imagem do pet!")
 
@@ -64,31 +73,40 @@ function PetRegister(){
         .getPublicUrl(filePath) 
 
 
-        const {error} = await supabase
-        .from('Registro_de_pets')
-        .insert([{ name:nome, age:String(idade)+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici, image: publicUrl, user_id=user.user.id, }])
+        if(user){
+            const {error} = await supabase
+            .from('Registro_de_pets')
+            .insert([{ name:nome, age:String(idade+" ")+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici, image: publicUrl, user_id: user.user.id}])
 
-        if (error) {
-            console.error(error)
-            alert(error.message)
-        } else {
-            alert("Pet cadastrado com sucesso")
-            event.currentTarget.reset()
+            if (error) {
+                console.error(error)
+                alert(error.message)
+            } else {
+                alert("Pet cadastrado com sucesso")
+                form.reset()
+            }
         }
     }
 
     //-------------HTML---------------
     return (
-        <form
-         onSubmit={(event) => {register(event)}}
-         className="flex flex-col items-center gap-2 text-2xl m-20 p-5 border-0 rounded-3xl"
-        >
+        <div className="flex flex-col items-center justify-center p-5 rounded-l-3xl bg-yellow-950 text-white">
+            <button 
+                className="relative right-45 cursor-pointer active:cursor-alias"
+                onClick={() => {fechar(false)}}
+            >X</button>
+            <h1 className="m-4 text-3xl">Vamos registrar seu pet?</h1>
+            <form
+            onSubmit={(event) => {register(event)}}
+            className="flex flex-col items-center justify-center gap-4"
+            >
 {/* ----------------NOME---------------  */}
             <label htmlFor="nome">
                 Nome:
                 <input
                  id="nome"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 name="nome"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                  type="text" pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõ]+)*$"
                  title="Digite apenas letras"
                  required
@@ -101,12 +119,14 @@ function PetRegister(){
                 Idade:
                 <input
                  id="idade" 
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 name="idade"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 ></input>
                 <select
                  id="faixa"
+                 name="faixa"
                  required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 >
                     <option value={"meses"}>meses</option>
                     <option value={"anos"}>anos</option>
@@ -120,8 +140,9 @@ function PetRegister(){
                 Gênero: 
                 <select 
                  id="sexo" 
+                 name="sexo"
                  required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 >
                     <option value={"Fêmea"}>Fêmea</option>
                     <option value={"Macho"}>Macho</option>
@@ -133,8 +154,9 @@ function PetRegister(){
                 Tamanho: 
                 <select
                  id="tamanho" 
+                 name="tamanho"
                  required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 >
                     <option value={"p"}>Pequeno</option>
                     <option value={"m"}>Médio</option>
@@ -147,8 +169,9 @@ function PetRegister(){
                 Tipo: 
                 <select 
                  id="tipo" 
+                 name="tipo"
                  required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 >
                     <option value={"Gato"}>Gato</option>
                     <option value={"Cachorro"}>Cachorro</option>
@@ -157,69 +180,91 @@ function PetRegister(){
             </label>
 
 {/* -----------FOTO DO PET------------------ */} 
-            <label htmlFor="file" className="font-bold mb-1">Foto:</label>
+            <label htmlFor="file" className="">
+                Foto:
                 <input 
                 id="file"
+                name="file"
                 type="file" 
-                accept="image/*" 
+                accept="image/*"
                 onChange={(event) => setFile(event.target.files?.[0] || null)}
-                className="text-sm"
-                />           
+                className="text-sm bg-white rounded-3xl m-2 p-2 text-black"
+                />  
+            </label>
+                         
 
 {/* -----------DESCRIÇÃO------------------ */}
             <label htmlFor="desc">
                 Descrição: 
                 <textarea
                  id="desc" 
+                 name="desc"
                  minLength={10} maxLength={500}
                  required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 ></textarea>
             </label>
 
 {/* -----------VACINAS--------------- */}
-            <h3>Vacinas:</h3>
-            <label htmlFor="rab">
-                Antirab 
-                <input  
-                 id="rab"
-                 type="checkbox"
-                 value={"Antirab"}
-                    />
-            </label>
-            <label htmlFor="felv">
-                FELV 
-                <input  
-                 id="felv"
-                 type="checkbox"
-                 value={"FELV"}
-                />
-            </label>
-            <label htmlFor="fiv">
-                FIV 
-                <input  
-                 id="fiv"
-                 type="checkbox"
-                 value={"FIV"}
-                />
-            </label>
+            <div
+                className="flex"
+            >
+                <p className="mr-2">Vacinas:</p>
+                <div>
+                    <label htmlFor="rab">
+                        Antirab 
+                        <input  
+                        id="rab"
+                        name="rab"
+                        type="checkbox"
+                        className="ml-2 mr-2"
+                        value={"Antirab"}
+                            />
+                    </label>
+                    <label htmlFor="felv">
+                        FELV 
+                        <input  
+                        id="felv"
+                        name="felv"
+                        type="checkbox"
+                        className="ml-2 mr-2"
+                        value={"FELV"}
+                        />
+                    </label>
+                    <label htmlFor="fiv">
+                        FIV 
+                        <input  
+                        id="fiv"
+                        name="fiv"
+                        type="checkbox"
+                        className="ml-2 mr-2"
+                        value={"FIV"}
+                        />
+                    </label>
+                </div>
+            </div>
+            
 
 {/* ---------------VERMIFUGADO------------- */}
             <label htmlFor="vermi">
                 Vermifugado: 
                 <input 
                  id="vermi" 
+                 name="vermi"
                  type="date"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                 ></input>
             </label>
 
 {/* --------------CASTRADO--------------- */}
             <label htmlFor="castr">
-                Castrado: 
+                Castrado
                 <input 
                  id="castr" 
+                 name="castr"
                  type="radio"
                  value={"sim"}
+                 className="ml-2"
                 ></input>
             </label>
 
@@ -228,7 +273,8 @@ function PetRegister(){
                 Deficiências: 
                 <input 
                  id="defici" 
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+                 name="defici"
+                 className="bg-white rounded-3xl focus:outline-none focus:border-amber-500 m-2 p-1 invalid:border-red-600 text-black"
                  pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*(,\s?[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*)*$"
                  title="Digite apenas letras"
                 ></input>
@@ -237,9 +283,10 @@ function PetRegister(){
 {/* -------------ENVIAR----------- */}
             <input
              type="submit"
-             className="p-2.5 bg-orange-400 rounded-3xl hover:bg-orange-600 cursor-pointer"
+             className="p-2.5 bg-orange-400 rounded-3xl hover:bg-orange-600 cursor-pointer active:cursor-alias"
             ></input>
         </form>
+    </div>
     )
 }
 
