@@ -1,246 +1,251 @@
-"use client"
+"use client";
 
-import { FormEvent, useState, useEffect } from "react"
-import { supabase } from "../../lib/supabase.js"
-import { Session } from '@supabase/supabase-js'
-function PetRegister(){
-    // PEGANDO INFORMAÇÕES DO FORMULÁRIO
-    const [file,setFile] = useState<File | null>(null)
-    const [user, setUser] = useState<Session | null>(null)
+import { FormEvent, useState, useEffect } from "react";
+import { supabase } from "../../lib/supabase.js";
+import { Session } from "@supabase/supabase-js";
+function PetRegister() {
+  // PEGANDO INFORMAÇÕES DO FORMULÁRIO
+  const [file, setFile] = useState<File | null>(null);
+  const [user, setUser] = useState<Session | null>(null);
 
-    useEffect(() => {
-        const sessao = async () => {
-            const {
-                data: { session },
-            } = await supabase.auth.getSession()
-            setUser(session)
-        }
-    }, [])
+  useEffect(() => {
+    const sessao = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setUser(session);
+    };
+  }, []);
 
-    async function register(event: FormEvent<HTMLFormElement>){
-        event.preventDefault()
+  async function register(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-        if(!file) return alert("Selecione uma imagem do pet!")
+    if (!file) return alert("Selecione uma imagem do pet!");
 
-        const formData = new FormData(event.currentTarget)
+    const formData = new FormData(event.currentTarget);
 
-        const nome = formData.get("nome")
-        const idade = formData.get("idade")
-        const tipoIdade = formData.get("faixa")
-        let faixa
-        if(tipoIdade == "meses"){
-            faixa = "2-11 meses"
-        }else{
-            if(Number(idade) >= 1 && Number(idade) <= 3){
-                faixa = "1-3 anos"
-            }else if(Number(idade) >= 4 && Number(idade) <= 6){
-                faixa = "4-6 anos"
-            }
-        }
-        const sexo = formData.get("sexo")
-        const tamanho = formData.get("tamanho")
-        const tipo = formData.get("tipo")
-        const desc = formData.get("desc")
-        const rab = formData.get("rab")
-        const fiv = formData.get("fiv")
-        const felv = formData.get("felv")
-        const vacinas = [rab ? rab : "", fiv ? fiv : "", felv ? felv : ""]
-        const castr = formData.get("castr")
-        const vermi = formData.get("vermi")
-        const defici = formData.get("defici")
-
-        const fileExt = file.name.split(".").pop()
-        const fileName = `${Math.random()}.${fileExt}`
-        const filePath = `pets/${fileName}`
-
-        const{error : uploadError} = await supabase.storage
-        .from("images")
-        .upload(filePath, file)
-
-        if(uploadError) throw uploadError
-
-        const {data: {publicUrl}} = supabase.storage
-        .from("images")
-        .getPublicUrl(filePath) 
-
-
-        const {error} = await supabase
-        .from('Registro_de_pets')
-        .insert([{ name:nome, age:String(idade)+String(tipoIdade), faixa: faixa, sexo:sexo, size:tamanho, type:tipo, desc:desc, vacinas:vacinas, castr: castr == "sim" ? true : false, vermi: vermi ? vermi : null, defici:defici, image: publicUrl, user_id=user.user.id, }])
-
-        if (error) {
-            console.error(error)
-            alert(error.message)
-        } else {
-            alert("Pet cadastrado com sucesso")
-            event.currentTarget.reset()
-        }
+    const nome = formData.get("nome");
+    const idade = formData.get("idade");
+    const tipoIdade = formData.get("faixa");
+    let faixa;
+    if (tipoIdade == "meses") {
+      faixa = "2-11 meses";
+    } else {
+      if (Number(idade) >= 1 && Number(idade) <= 3) {
+        faixa = "1-3 anos";
+      } else if (Number(idade) >= 4 && Number(idade) <= 6) {
+        faixa = "4-6 anos";
+      }
     }
+    const sexo = formData.get("sexo");
+    const tamanho = formData.get("tamanho");
+    const tipo = formData.get("tipo");
+    const desc = formData.get("desc");
+    const rab = formData.get("rab");
+    const fiv = formData.get("fiv");
+    const felv = formData.get("felv");
+    const vacinas = [rab ? rab : "", fiv ? fiv : "", felv ? felv : ""];
+    const castr = formData.get("castr");
+    const vermi = formData.get("vermi");
+    const defici = formData.get("defici");
 
-    //-------------HTML---------------
-    return (
-        <form
-         onSubmit={(event) => {register(event)}}
-         className="flex flex-col items-center gap-2 text-2xl m-20 p-5 border-0 rounded-3xl"
+    const fileExt = file.name.split(".").pop();
+    const fileName = `${Math.random()}.${fileExt}`;
+    const filePath = `pets/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from("images")
+      .upload(filePath, file);
+
+    if (uploadError) throw uploadError;
+
+    const {
+      data: { publicUrl },
+    } = supabase.storage.from("images").getPublicUrl(filePath);
+
+    if (!user || !user.user) {
+        console.error('Usuário não autenticado');
+        alert("Você precisa estar logado para cadastrar um pet");
+        return;
+    }
+    const { error } = await supabase
+      .from("Registro_de_pets")
+      .insert([
+        {
+          name: nome,
+          age: String(idade) + String(tipoIdade),
+          faixa: faixa,
+          sexo: sexo,
+          size: tamanho,
+          type: tipo,
+          desc: desc,
+          vacinas: vacinas,
+          castr: castr == "sim" ? true : false,
+          vermi: vermi ? vermi : null,
+          defici: defici,
+          image: publicUrl,
+          user_id: user.user.id,
+        },
+      ]);
+
+    if (error) {
+      console.error(error);
+      alert(error.message);
+    } else {
+      alert("Pet cadastrado com sucesso");
+      event.currentTarget.reset();
+    }
+  }
+
+  //-------------HTML---------------
+  return (
+    <form
+      onSubmit={(event) => {
+        register(event);
+      }}
+      className="flex flex-col items-center gap-2 text-2xl m-20 p-5 border-0 rounded-3xl"
+    >
+      {/* ----------------NOME---------------  */}
+      <label htmlFor="nome">
+        Nome:
+        <input
+          id="nome"
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+          type="text"
+          pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõ]+)*$"
+          title="Digite apenas letras"
+          required
+        ></input>
+      </label>
+
+      {/* ------------------IDADE/FAIXA-------------------- */}
+
+      <label htmlFor="idade">
+        Idade:
+        <input
+          id="idade"
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+        ></input>
+        <select
+          id="faixa"
+          required
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
         >
-{/* ----------------NOME---------------  */}
-            <label htmlFor="nome">
-                Nome:
-                <input
-                 id="nome"
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                 type="text" pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõ]+)*$"
-                 title="Digite apenas letras"
-                 required
-                ></input>
-            </label>
+          <option value={"meses"}>meses</option>
+          <option value={"anos"}>anos</option>
+        </select>
+      </label>
 
-{/* ------------------IDADE/FAIXA-------------------- */}
+      {/* --------------GENERO---------------- */}
+      <label htmlFor="sexo">
+        Gênero:
+        <select
+          id="sexo"
+          required
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+        >
+          <option value={"Fêmea"}>Fêmea</option>
+          <option value={"Macho"}>Macho</option>
+        </select>
+      </label>
 
-            <label htmlFor="idade">
-                Idade:
-                <input
-                 id="idade" 
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                ></input>
-                <select
-                 id="faixa"
-                 required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                >
-                    <option value={"meses"}>meses</option>
-                    <option value={"anos"}>anos</option>
-                </select>
-            </label>
-        
-            
-            
-{/* --------------GENERO---------------- */}
-            <label htmlFor="sexo">
-                Gênero: 
-                <select 
-                 id="sexo" 
-                 required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                >
-                    <option value={"Fêmea"}>Fêmea</option>
-                    <option value={"Macho"}>Macho</option>
-                </select>
-            </label>
-            
-{/* -----------TAMANHO------------ */}
-            <label htmlFor="tamanho">
-                Tamanho: 
-                <select
-                 id="tamanho" 
-                 required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                >
-                    <option value={"p"}>Pequeno</option>
-                    <option value={"m"}>Médio</option>
-                    <option value={"g"}>Grande</option>
-                </select>
-            </label>
+      {/* -----------TAMANHO------------ */}
+      <label htmlFor="tamanho">
+        Tamanho:
+        <select
+          id="tamanho"
+          required
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+        >
+          <option value={"p"}>Pequeno</option>
+          <option value={"m"}>Médio</option>
+          <option value={"g"}>Grande</option>
+        </select>
+      </label>
 
- {/* --------TIPO DE ANIMAL-------------- */}
-            <label htmlFor="tipo">
-                Tipo: 
-                <select 
-                 id="tipo" 
-                 required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                >
-                    <option value={"Gato"}>Gato</option>
-                    <option value={"Cachorro"}>Cachorro</option>
-                    <option value={"Pássaro"}>Pássaro</option>
-                </select>
-            </label>
+      {/* --------TIPO DE ANIMAL-------------- */}
+      <label htmlFor="tipo">
+        Tipo:
+        <select
+          id="tipo"
+          required
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+        >
+          <option value={"Gato"}>Gato</option>
+          <option value={"Cachorro"}>Cachorro</option>
+          <option value={"Pássaro"}>Pássaro</option>
+        </select>
+      </label>
 
-{/* -----------FOTO DO PET------------------ */} 
-            <label htmlFor="file" className="font-bold mb-1">Foto:</label>
-                <input 
-                id="file"
-                type="file" 
-                accept="image/*" 
-                onChange={(event) => setFile(event.target.files?.[0] || null)}
-                className="text-sm"
-                />           
+      {/* -----------FOTO DO PET------------------ */}
+      <label htmlFor="file" className="font-bold mb-1">
+        Foto:
+      </label>
+      <input
+        id="file"
+        type="file"
+        accept="image/*"
+        onChange={(event) => setFile(event.target.files?.[0] || null)}
+        className="text-sm"
+      />
 
-{/* -----------DESCRIÇÃO------------------ */}
-            <label htmlFor="desc">
-                Descrição: 
-                <textarea
-                 id="desc" 
-                 minLength={10} maxLength={500}
-                 required
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                ></textarea>
-            </label>
+      {/* -----------DESCRIÇÃO------------------ */}
+      <label htmlFor="desc">
+        Descrição:
+        <textarea
+          id="desc"
+          minLength={10}
+          maxLength={500}
+          required
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+        ></textarea>
+      </label>
 
-{/* -----------VACINAS--------------- */}
-            <h3>Vacinas:</h3>
-            <label htmlFor="rab">
-                Antirab 
-                <input  
-                 id="rab"
-                 type="checkbox"
-                 value={"Antirab"}
-                    />
-            </label>
-            <label htmlFor="felv">
-                FELV 
-                <input  
-                 id="felv"
-                 type="checkbox"
-                 value={"FELV"}
-                />
-            </label>
-            <label htmlFor="fiv">
-                FIV 
-                <input  
-                 id="fiv"
-                 type="checkbox"
-                 value={"FIV"}
-                />
-            </label>
+      {/* -----------VACINAS--------------- */}
+      <h3>Vacinas:</h3>
+      <label htmlFor="rab">
+        Antirab
+        <input id="rab" type="checkbox" value={"Antirab"} />
+      </label>
+      <label htmlFor="felv">
+        FELV
+        <input id="felv" type="checkbox" value={"FELV"} />
+      </label>
+      <label htmlFor="fiv">
+        FIV
+        <input id="fiv" type="checkbox" value={"FIV"} />
+      </label>
 
-{/* ---------------VERMIFUGADO------------- */}
-            <label htmlFor="vermi">
-                Vermifugado: 
-                <input 
-                 id="vermi" 
-                 type="date"
-                ></input>
-            </label>
+      {/* ---------------VERMIFUGADO------------- */}
+      <label htmlFor="vermi">
+        Vermifugado:
+        <input id="vermi" type="date"></input>
+      </label>
 
-{/* --------------CASTRADO--------------- */}
-            <label htmlFor="castr">
-                Castrado: 
-                <input 
-                 id="castr" 
-                 type="radio"
-                 value={"sim"}
-                ></input>
-            </label>
+      {/* --------------CASTRADO--------------- */}
+      <label htmlFor="castr">
+        Castrado:
+        <input id="castr" type="radio" value={"sim"}></input>
+      </label>
 
-{/* -------------DEFICIÊNCIAS-------------  */}
-            <label htmlFor="defici">
-                Deficiências: 
-                <input 
-                 id="defici" 
-                 className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
-                 pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*(,\s?[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*)*$"
-                 title="Digite apenas letras"
-                ></input>
-            </label>
+      {/* -------------DEFICIÊNCIAS-------------  */}
+      <label htmlFor="defici">
+        Deficiências:
+        <input
+          id="defici"
+          className="border-2 border-amber-600 rounded-3xl focus:outline m-2 p-1 invalid:border-red-600"
+          pattern="^[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*(,\s?[A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+( [A-Za-zÁÉÍÓÚáéíóúÂÊÔâêôÃÕãõÇç]+)*)*$"
+          title="Digite apenas letras"
+        ></input>
+      </label>
 
-{/* -------------ENVIAR----------- */}
-            <input
-             type="submit"
-             className="p-2.5 bg-orange-400 rounded-3xl hover:bg-orange-600 cursor-pointer"
-            ></input>
-        </form>
-    )
+      {/* -------------ENVIAR----------- */}
+      <input
+        type="submit"
+        className="p-2.5 bg-orange-400 rounded-3xl hover:bg-orange-600 cursor-pointer"
+      ></input>
+    </form>
+  );
 }
 
-export default PetRegister
+export default PetRegister;
