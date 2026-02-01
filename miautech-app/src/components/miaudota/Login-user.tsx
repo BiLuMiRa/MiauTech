@@ -1,16 +1,14 @@
 "use client"
 
-import Link from 'next/link'
 import { supabase } from "../../lib/supabase.js"
 import { FormEvent, useState } from 'react'
 import Image from 'next/image.js'
-import Signin from './SignIn-user'
+import SignUp from './SignUp-user'
 export default function LoginUser(props:any){
     async function authentication(event:FormEvent<HTMLFormElement>){
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
-        const form = event.currentTarget
         const email = formData.get("email")
         const senha = formData.get("password")
 
@@ -24,7 +22,7 @@ export default function LoginUser(props:any){
             alert(error.message)
         }else{
             alert("Usuário logado com sucesso")
-            form.reset()
+            event.currentTarget.reset()
         }
     }
 
@@ -32,8 +30,7 @@ export default function LoginUser(props:any){
     
     return(
         <div 
-            className='z-1000 fixed top-[22%] right-[30%] bg-yellow-950 box-border rounded-4xl shadow-black shadow-[-px_0_0_-2px_rgba(0,0,0,0.1)] p-5 ' 
-            id='openUserLogin'
+            className='z-1000 fixed top-[5%] right-[5%] bg-yellow-950 box-border rounded-4xl shadow-black shadow-[-px_0_0_-2px_rgba(0,0,0,0.1)] p-5 ' 
         >
             <div
                 className='flex justify-end'
@@ -67,7 +64,7 @@ export default function LoginUser(props:any){
                         <input
                             name='email'
                             type="email"
-                            className='bg-white border-2 rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2'
+                            className='bg-white rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2 text-black'
                         ></input>
                     </label>
 
@@ -78,7 +75,7 @@ export default function LoginUser(props:any){
                         <input
                             name='password'
                             type="password"
-                            className='bg-white border-2 rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2'
+                            className='bg-white rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2 text-black'
                         ></input>
                     </label>
 
@@ -94,7 +91,9 @@ export default function LoginUser(props:any){
                         >Cadastre-se!
                     </button>
                 </p>
-                {cadastroAberto && <Signin setCadastroAberto={setCadastroAberto} setLoginAberto={props.setLoginAberto} />}
+                <div className='fixed cadastro top-0' id={cadastroAberto ? 'opencad' : 'closecad'}>
+                    <SignUp setCadastroAberto={setCadastroAberto} setLoginAberto={props.setLoginAberto} />
+                </div>
             </div>
         </div>
     )

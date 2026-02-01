@@ -40,7 +40,7 @@ export default function Pets() {
   return (
     <section className="pets">
       {data.map((pet) => (
-        <Link key={pet.id} href={`/miaudota/detailsPet/${pet.id}`}>
+        <Link key={pet.id} href={`/miaudota/detailsPet/${pet.id}`} className="transition duration-400 ease-in-out hover:-translate-y-5 pet">
           <img src="./imgs/miaudota/pata1.png" className="pata1" alt="Pata" />
           <div>
             <img src={pet.image || "./imgs/miaudota/pata1.png"} alt="Imagem do Pet" />

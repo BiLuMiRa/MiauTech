@@ -41,10 +41,10 @@ body {
   min-height: 100vh;
 }
 
-section,
+/* section,
 div {
   max-width: 100%;
-}
+} */
 
 /*------------MENU/HEADER----------*/
 header {
@@ -722,32 +722,37 @@ footer .logo-footer {
   }
 }
 
-/* -------------- LOGIN ----------------- */
+/* -------------- USER LOGIN/SIGNUP ----------------- */
+.login{
+  transform: translate(0, 0) scale(0);
+  transition: transform 300ms ease;
+}
 
 #openUserLogin {
-  animation: openPopUp 200ms linear;
+  transform: translate(-320px, 150px) scale(1);
 }
 
-/* #closeUserLogin{
-  animation: closePopUp 200ms linear;
-} */
+#closeUserLogin{
+  pointer-events: none;
+}
 
-.openCad{
+.cadastro{
+  transform: translateX(200px);
+  opacity: 0;
+  transition: transform 300ms ease-in, opacity 300ms linear;
+}
+
+#opencad{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#closecad{
+  pointer-events: none;
+}
+
+.pet{
   animation: opencad 300ms linear;
-}
-
-.closeCad{
-  animation: closecad 300ms linear;
-}
-
-/* -------------MENU------------- */
-
-#abrirMenu{
-  background-color: #000000;
-}
-
-#fecharMenu{
-  display: none;
 }
 
 /* ------------PET REGISTER ------------ */
@@ -766,33 +771,6 @@ footer .logo-footer {
 
 
 /* ---------------- ANIMAÇÕES --------------- */
-
-@keyframes openPopUp {
-  0% {
-    top: 0%;
-    right: 0%;
-    display: flex;
-    justify-content: end;
-    scale: 0%;
-  }
-  100% {
-    scale: 100%;
-  }
-}
-
-/* @keyframes closePopUp {
-  100% {
-    top: 0%;
-    right: 0%;
-    display: flex;
-    justify-content: end;
-    scale: 0%;
-  }
-  0% {
-    scale: 100%;
-  }
-} */
-
 @keyframes opencad {
   0% {
     display: none;
@@ -803,17 +781,6 @@ footer .logo-footer {
     opacity: 100%;
   }
 }
-
-@keyframes closecad {
-  0% {
-    opacity: 100%;
-  }
-
-  100% {
-    opacity: 0%;
-  }
-}
-
 
 /* :root {
   --background: #ffffff;
