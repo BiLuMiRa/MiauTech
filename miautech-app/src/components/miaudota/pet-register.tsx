@@ -290,4 +290,4 @@ function PetRegister({ fechar }: PetRegisterProps){
     )
 }
 
-export default PetRegister
+export default PetRegister;
