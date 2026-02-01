@@ -3,7 +3,8 @@ import { supabase } from "@/src/lib/supabase";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import "@/src/app/globals.css"
-import FoundPet from "./Form-Found-pet";
+import FoundPet from "./Form-Lost-pet";
+import LostPet from "./Form-Lost-pet";
 
 type Pet = {
   id: number;
@@ -12,7 +13,7 @@ type Pet = {
   type: string;
   genero: string;
 };
-export default function FPets() {
+export default function LPets() {
   const [data, setData] = useState<Pet[] | null>([]);
   const [error, setError] = useState<string | null>(null);
   const [botao,setbotao] = useState(false);
@@ -20,7 +21,7 @@ export default function FPets() {
     //hook para buscar os dados após o componente ser montado
     const fetchData = async () => {
       const { data, error } = await supabase
-        .from("FoundPet")
+        .from("LostPet")
         .select("*")
         .order("created_at",{ascending: false})
 
@@ -41,12 +42,12 @@ export default function FPets() {
 
   return (
     <section className="pets flex">
-      <button onClick={(() => setbotao(!botao))} className="absolute w-50 rounded hover:cursor-pointer top-25.5 left-8.5 h-8.5 w-1xl bg-green-950 text-white">
-        {!botao ? "Cadastrar pet encontrado" : "fechar"} 
+      <button onClick={(() => setbotao(!botao))} className="absolute w-50 rounded hover:cursor-pointer top-25.5 left-8.5 h-8.5 w-1xl bg-blue-950 text-white">
+        {!botao ? "Cadastrar pet perdido" : "fechar"} 
       </button>
 
       {botao && (
-        <FoundPet 
+        <LostPet
         onSuccess={() =>{
           fetchData()
           
