@@ -97,6 +97,26 @@ header .options a:hover {
   color: #28aef8;
 }
 
+/* ---------------BUSCA---------------*/
+.busca-input {
+  margin-top: 3%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  color:#28aef8;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.233);
+  border-radius: 60px;
+  padding: 2px;
+  padding-left: 10px;
+  outline:none;
+}
+
+.busca-input:focus {
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: #c4c4c4;
+}
+
 /* ---------------VETERINÁRIOS---------------*/
 .vets {
   margin: 5%;
@@ -140,7 +160,7 @@ header .options a:hover {
   font-weight: 500;
   margin-bottom: 0px;
   text-decoration: none;
-  color: #452824;
+  color:#1e86be;
   text-align: center;
 }
 
