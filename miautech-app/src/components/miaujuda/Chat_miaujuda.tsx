@@ -76,7 +76,7 @@ export default function ChatMiaujuda({vet}: {vet:any}){
     }
 
     return (
-    <div className="max-w-md ml-[230px] my-10 bg-white shadow-xl rounded-[0.5rem] border border-sky-100 overflow-hidden">
+    <div className="max-w-md my-10 bg-white shadow-xl rounded-[0.5rem] border border-sky-100 overflow-hidden">
       {/* Cabeçalho */}
       <div className="bg-sky-700 p-4 text-white text-center">
         <h3 className="font-bold">Chat com {vet.name}</h3>

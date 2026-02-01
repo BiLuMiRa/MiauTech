@@ -75,7 +75,7 @@ export default function Chat({pet}: {pet : any}){
 
 
 return (
-    <div className="max-w-md ml-220 my-10 bg-white shadow-xl rounded-[2rem] border border-orange-100 overflow-hidden">
+    <div className="max-w-md my-10 bg-white shadow-xl rounded-[0.5rem] border border-orange-100 overflow-hidden">
       {/* Cabeçalho */}
       <div className="bg-orange-400 p-4 text-white text-center">
         <h3 className="font-bold">Chat sobre {pet?.name || "o Pet"}</h3>
@@ -88,7 +88,7 @@ return (
           const isMe = msg.sender_id === visitorId;
           return (
             <div key={msg.id} className={`flex ${isMe ? "justify-end" : "justify-start"}`}>
-              <div className={`max-w-[80%] p-3 rounded-2xl text-sm shadow-sm ${
+              <div className={`max-w-[80%] p-3 rounded-2xl text-sm  shadow-sm ${
                 isMe ? "bg-orange-500 text-white rounded-tr-none" : "bg-white text-gray-700 rounded-tl-none"
               }`}>
                 <p>{msg.content}</p>

@@ -13,7 +13,7 @@ export default function ChatSection({pet}: {pet: any}){
             </button>
 
             {chatOpen && (
-            <div className="fixed bottom-4 right-4 z-50 w-full max-w-[350px]">
+            <div className="fixed bottom-4 right-4 z-50 w-[500px]">
                 {/* Botão para fechar dentro do chat se quiser */}
                 <button 
                 onClick={() => setChatOpen(false)}
