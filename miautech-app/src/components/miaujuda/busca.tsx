@@ -1,9 +1,23 @@
-export default function Busca() {
+"use client";
+
+export default function Busca({ setBusca, setBuscado }) {
   return (
-    <div className="">
-      <form className="">
-        <input type="text" placeholder="⌕" className="busca-input"></input>
-      </form>
-    </div>
+    <form className="">
+      <input
+        type="text"
+        placeholder="Buscar veterinários        🔍︎​"
+        className="busca-input"
+        onChange={(e) => {
+            const value = e.target.value;
+            if (value) {
+                setBusca(true);
+                setBuscado(value);
+                
+            } else {
+                setBusca(false);
+            }
+        }}
+      ></input>
+    </form>
   );
 }
