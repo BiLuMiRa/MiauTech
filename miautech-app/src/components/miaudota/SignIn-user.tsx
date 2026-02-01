@@ -8,6 +8,7 @@ export default function Signin(props:any){
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
+        const form = event.currentTarget
         const email = formData.get("email")
         const senha = formData.get("password")
 
@@ -21,7 +22,7 @@ export default function Signin(props:any){
             alert(error.message)
         }else{
             alert("Usuário cadastrado com sucesso")
-            event.currentTarget.reset()
+            form.reset()
         }
     }
     

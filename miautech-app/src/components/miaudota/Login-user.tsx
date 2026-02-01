@@ -10,6 +10,7 @@ export default function LoginUser(props:any){
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
+        const form = event.currentTarget
         const email = formData.get("email")
         const senha = formData.get("password")
 
@@ -23,7 +24,7 @@ export default function LoginUser(props:any){
             alert(error.message)
         }else{
             alert("Usuário logado com sucesso")
-            event.currentTarget.reset()
+            form.reset()
         }
     }
 
