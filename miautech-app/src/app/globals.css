@@ -750,6 +750,20 @@ footer .logo-footer {
   display: none;
 }
 
+/* ------------PET REGISTER ------------ */
+.register{
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+#abrirRegister{
+  transform: translateX(0%);
+}
+
+#fecharRegister{
+  pointer-events: none;
+}
+
 
 /* ---------------- ANIMAÇÕES --------------- */
 
@@ -781,6 +795,7 @@ footer .logo-footer {
 
 @keyframes opencad {
   0% {
+    display: none;
     opacity: 0%;
   }
 
@@ -795,8 +810,7 @@ footer .logo-footer {
   }
 
   100% {
-    opacity: 0;
-    display: hidden;
+    opacity: 0%;
   }
 }
 
