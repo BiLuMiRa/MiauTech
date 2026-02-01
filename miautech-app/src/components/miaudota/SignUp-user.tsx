@@ -3,7 +3,7 @@
 import { supabase } from "../../lib/supabase.js"
 import { FormEvent } from 'react'
 import Image from "next/image.js"
-export default function Signin(props:any){
+export default function SignUp(props:any){
     async function signin(event:FormEvent<HTMLFormElement>){
         event.preventDefault()
 
@@ -28,7 +28,7 @@ export default function Signin(props:any){
     
     return(
         <div
-            className='fixed top-[22%] right-[30%] bg-yellow-900 box-border rounded-4xl p-5 openCad'
+            className=' shadow-black shadow-[-px_0_0_-2px_rgba(0,0,0,0.1)] bg-yellow-900 box-border rounded-4xl p-5 openCad'
         >             
             <div className="flex justify-between">
                 <button
@@ -71,7 +71,7 @@ export default function Signin(props:any){
                         <input
                             name="email"
                             type="email"
-                            className='bg-white border-2 rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2'
+                            className='bg-white rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2 text-black'
                         ></input>
                     </label>
 
@@ -82,7 +82,7 @@ export default function Signin(props:any){
                         <input
                             name='password'
                             type="password"
-                            className='bg-white border-2 rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2'
+                            className='bg-white rounded-4xl focus:outline-none focus:border-amber-500 p-1 ml-2 text-black'
                         ></input>
                     </label>
 
