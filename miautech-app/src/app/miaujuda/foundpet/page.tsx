@@ -1,10 +1,11 @@
-import FoundPet from "../../../components/miaujuda/Found-pet";
+
+import FPets from "@/src/components/miaujuda/FoundPets";
 
 export default function FoundPetsForms(){
 
     return(
         <div>
-            <FoundPet />
+            <FPets />
         </div>
     )
 }
