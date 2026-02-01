@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 type Vet = {
   id: number;
   name: string;
-  image: string | null;
+  image: string | Blob | undefined;
   specialty: string;
   location: string;
 };
@@ -18,8 +18,8 @@ export default function Vets() {
   useEffect(() => {
     const fetchDataVets = async () => {
       const { data, error } = await supabase
-      .from("Registro_de_vets")
-      .select("*");
+        .from("Registro_de_vets")
+        .select("*");
 
       if (error) {
         setError(error.message);
@@ -30,8 +30,8 @@ export default function Vets() {
     fetchDataVets();
   }, []);
 
-    if (error) return <div> Erro: {error} </div>;
-    if (!data) return <div> Carregando... </div>;
+  if (error) return <div> Erro: {error} </div>;
+  if (!data) return <div> Carregando... </div>;
 
   return (
     <div>
@@ -40,7 +40,7 @@ export default function Vets() {
           <div key={vet.id}>
             <Link href={`/miaujuda/details/${vet.id}`}>
               <div>
-                <img src={vet.image} alt="vet" />
+                {vet.image && <img src={vet.image} alt={vet.name} />}
                 <p className="name">{vet.name}</p>
                 <p className="specialty">{vet.specialty}</p>
                 <p className="location">{vet.location}</p>

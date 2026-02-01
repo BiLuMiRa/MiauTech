@@ -1,6 +1,11 @@
 "use client";
 
-export default function Busca({ setBusca, setBuscado }) {
+type BuscaProps = {
+  setBusca: React.Dispatch<React.SetStateAction<boolean>>;
+  setBuscado: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export default function Busca({ setBusca, setBuscado }: BuscaProps) {
   return (
     <form className="">
       <input
