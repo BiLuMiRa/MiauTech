@@ -7,13 +7,17 @@ import { useState, useEffect } from "react";
 type Vet = {
   id: number;
   name: string;
-  image: string | null;
+  image: string | Blob | undefined;
   specialty: string;
   location: string;
 };
 
-export default function VetsBuscados({ buscado }) {
-  const [data, setData] = useState<Vet[] | null>([]);
+type VetsBuscadosProps = {
+  buscado: string;
+}
+
+export default function VetsBuscados({ buscado }: VetsBuscadosProps) {
+  const [data, setData] = useState<Vet[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -40,8 +44,12 @@ export default function VetsBuscados({ buscado }) {
 
   if (error) return <div> Erro: {error} </div>;
 
-  if (buscado && data.length===0) {
-    return <p className="flex h-screen items-center justify-center text-blue-400">Nenhum veterinário encontrado</p>;
+  if (buscado && data.length === 0) {
+    return (
+      <p className="flex h-screen items-center justify-center text-blue-400">
+        Nenhum veterinário encontrado
+      </p>
+    );
   }
 
   return (
@@ -51,7 +59,7 @@ export default function VetsBuscados({ buscado }) {
           <div key={vet.id}>
             <Link href={`/miaujuda/details/${vet.id}`}>
               <div>
-                <img src={vet.image} alt="vet" />
+                {vet.image && <img src={vet.image} alt={vet.name} />}
                 <p className="name">{vet.name}</p>
                 <p className="specialty">{vet.specialty}</p>
                 <p className="location">{vet.location}</p>
