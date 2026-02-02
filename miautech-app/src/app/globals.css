@@ -103,12 +103,6 @@ header .options a:hover {
   color: #e58233;
 }
 
-.login-menu{
-  height: fit-content;
-  position: relative;
-  right: 200px;
-}
-
 /*------------SLIDES----------*/
 
 .swiper {
@@ -737,7 +731,7 @@ footer .logo-footer {
 }
 
 #openUserLogin {
-  transform: translate(-320px, 150px) scale(1);
+  transform: translate(-320px, 10px) scale(1);
 }
 
 #closeUserLogin{
@@ -745,7 +739,7 @@ footer .logo-footer {
 }
 
 .cadastro{
-  transform: translateX(200px);
+  transform: translateX(4rem);
   opacity: 0;
   transition: transform 300ms ease-in, opacity 300ms linear;
 }

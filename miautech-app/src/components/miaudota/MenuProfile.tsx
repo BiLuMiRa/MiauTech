@@ -54,9 +54,7 @@ export default function menuProfile () {
             {isMenuOpen && (
                 <div className="menu-profile">
                     {!user ? (
-                        <div className="login-menu">
-                            <LoginUser setLoginAberto={setIsMenuOpen}/>
-                        </div>
+                        <LoginUser setLoginAberto={setIsMenuOpen}/>
                     ) : (
                         <div>
                             <Link href={'/miaudota/donate'} ></Link>
