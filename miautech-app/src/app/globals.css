@@ -74,8 +74,10 @@ header .imgs-header {
   margin-left: 1.5%;
 }
 
-header #user {
+.user {
   display: inline-flex;
+  width: 3.3rem;
+  border-radius: 50%;
 }
 
 header .options {
@@ -99,6 +101,12 @@ header .options a, header .options button{
 
 header .options a:hover {
   color: #e58233;
+}
+
+.login-menu{
+  height: fit-content;
+  position: relative;
+  right: 200px;
 }
 
 /*------------SLIDES----------*/

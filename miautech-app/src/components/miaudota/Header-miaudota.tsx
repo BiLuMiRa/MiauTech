@@ -2,9 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import { supabase } from '@/src/lib/supabase'
-import { Session } from '@supabase/supabase-js'
 import MenuProfile from './MenuProfile'
 
 export default function Header_miaudota() {

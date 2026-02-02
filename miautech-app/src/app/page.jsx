@@ -12,9 +12,9 @@ import Popup from "../components/miaudota/Popup";
 import PetsFiltrados from "../components/miaudota/PetsFiltrados";
 import Pets from "../components/miaudota/Pets";
 import Footer_miaudota from "../components/miaudota/Footer-miaudota";
-import LoginUser from "../components/miaudota/Login-user";
+import LoginUser from "../components/miaudota/LoginUser";
 import { Fredoka } from "next/font/google";
-import Signin from "../components/miaudota/SignUp-user";
+import Signin from "../components/miaudota/SignUpUser";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
