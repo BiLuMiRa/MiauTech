@@ -545,7 +545,7 @@ header .options a:hover {
 .events {
   margin-top: 5%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
   justify-content: center;
   align-items: center;
   place-items: center;
