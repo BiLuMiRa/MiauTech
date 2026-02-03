@@ -726,12 +726,12 @@ footer .logo-footer {
 
 /* -------------- USER LOGIN/SIGNUP ----------------- */
 .login{
-  transform: translate(0, 0) scale(0);
+  transform: scale(0);
   transition: transform 300ms ease;
 }
 
 #openUserLogin {
-  transform: translate(-320px, 10px) scale(1);
+  transform: scale(1);
 }
 
 #closeUserLogin{
@@ -739,18 +739,21 @@ footer .logo-footer {
 }
 
 .cadastro{
-  transform: translateX(4rem);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(4rem);
   opacity: 0;
   transition: transform 300ms ease-in, opacity 300ms linear;
 }
 
 #opencad{
-  transform: translateX(0);
+  transform: translate(-50%, -50%) translateX(0);
   opacity: 1;
 }
 
 #closecad{
-  pointer-events: none;
+   pointer-events: none;
 }
 
 .pet{

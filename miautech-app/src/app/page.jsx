@@ -1,10 +1,6 @@
 "use client";
-
 import React from "react";
 import { useState } from "react";
-
-import Link from "next/link";
-import PetRegister from "../components/miaudota/pet-register";
 import Header_miaudota from "../components/miaudota/Header-miaudota";
 import Slides from "../components/miaudota/Slides";
 import Filter from "../components/miaudota/Filter";
@@ -14,7 +10,6 @@ import Pets from "../components/miaudota/Pets";
 import Footer_miaudota from "../components/miaudota/Footer-miaudota";
 import LoginUser from "../components/miaudota/LoginUser";
 import { Fredoka } from "next/font/google";
-import Signin from "../components/miaudota/SignUpUser";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -29,35 +24,32 @@ export default function Home() {
   const [buscar, setBuscar] = useState(false);
 
   return (
-    <>
-      <div id={loginAberto ? 'openUserLogin' : 'closeUserLogin'} className="login z-1000 fixed top-[5%] right-[5%]">
+    <div>
+      <div id={loginAberto ? 'openUserLogin' : 'closeUserLogin'} className="login fixed inset-0 flex items-center justify-center z-1000">
         <LoginUser setLoginAberto={setLoginAberto} loginAberto={loginAberto}/>
       </div>
-  
-        <div className={loginAberto ? "blur-2xl" : ""}>
-          <Header_miaudota setLoginAberto={setLoginAberto} loginAberto={loginAberto}/>
-          <main className="content">
-            <Slides />
-            <Filter setpopupAberto={setpopupAberto} />
-            {popupAberto && (
-          <Popup
-            setpopupAberto={setpopupAberto}
-            btnSelecionados={btnSelecionados}
-            setbtnSelecionados={setbtnSelecionados}
-            setBuscar={setBuscar}
-          />
-        )}
-        {buscar ? (
-          <PetsFiltrados
-            btnSelecionados={btnSelecionados}
-            buscar={buscar}
-          />
-        ) : (
-          <Pets />
-        )}
-          </main>
-          <Footer_miaudota />
-        </div>
-    </>
+      
+      <div className={loginAberto ? "blur-sm" : ""}>
+        <Header_miaudota setLoginAberto={setLoginAberto} />
+        <main className="content">
+          <Slides />
+          <Filter setpopupAberto={setpopupAberto} />
+          {popupAberto && (
+            <Popup
+              setpopupAberto={setpopupAberto}
+              btnSelecionados={btnSelecionados}
+              setbtnSelecionados={setbtnSelecionados}
+              setBuscar={setBuscar}
+            />
+          )}
+          {buscar ? (
+            <PetsFiltrados btnSelecionados={btnSelecionados} buscar={buscar} />
+          ) : (
+            <Pets />
+          )}
+        </main>
+        <Footer_miaudota />
+      </div>
+    </div>
   );
 }
