@@ -74,8 +74,10 @@ header .imgs-header {
   margin-left: 1.5%;
 }
 
-header #user {
+.user {
   display: inline-flex;
+  width: 3.3rem;
+  border-radius: 50%;
 }
 
 header .options {
@@ -545,7 +547,7 @@ header .options a:hover {
 .events {
   margin-top: 5%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
   justify-content: center;
   align-items: center;
   place-items: center;
@@ -724,12 +726,12 @@ footer .logo-footer {
 
 /* -------------- USER LOGIN/SIGNUP ----------------- */
 .login{
-  transform: translate(0, 0) scale(0);
+  transform: scale(0);
   transition: transform 300ms ease;
 }
 
 #openUserLogin {
-  transform: translate(-320px, 150px) scale(1);
+  transform: scale(1);
 }
 
 #closeUserLogin{
@@ -737,18 +739,21 @@ footer .logo-footer {
 }
 
 .cadastro{
-  transform: translateX(200px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(4rem);
   opacity: 0;
   transition: transform 300ms ease-in, opacity 300ms linear;
 }
 
 #opencad{
-  transform: translateX(0);
+  transform: translate(-50%, -50%) translateX(0);
   opacity: 1;
 }
 
 #closecad{
-  pointer-events: none;
+   pointer-events: none;
 }
 
 .pet{
