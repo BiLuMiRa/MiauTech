@@ -163,6 +163,8 @@ function FoundPet({onSuccess}: {onSuccess: () => void}){
                  id="date" 
                  name="date"
                  placeholder="dd/mm/aaaa"
+                 pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/202[6-9]"
+                 title="Informe uma data entre 2026 e 2029"
                  className="border-2 text-gray-500 border-amber-600 rounded-3xl focus:outline m-2 p-1"
                 ></input>
             
@@ -187,6 +189,7 @@ function FoundPet({onSuccess}: {onSuccess: () => void}){
                  id="contact" 
                  name="contact"
                  placeholder="(xx) xxxx-xxxx"
+                 pattern="\(d{2}\)\s\d{4-5}-\d{4}"
                  className="border-2 text-gray-500 border-amber-600 rounded-3xl focus:outline m-2 p-1"
                 ></input>
             
