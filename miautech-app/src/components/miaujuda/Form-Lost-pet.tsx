@@ -187,7 +187,7 @@ function LostPet({onSuccess}: {onSuccess: () => void}){
                  id="contact" 
                  name="contact"
                  placeholder="(xx) xxxx-xxxx"
-                 pattern="\(d{2}\)\s\d{4-5}-\d{4}"
+                 pattern="\(d{2}\)\s\d{4,5}-\d{4}"
                  className="border-2 text-gray-500 border-amber-600 rounded-3xl focus:outline m-2 p-1"
                 ></input>
             
