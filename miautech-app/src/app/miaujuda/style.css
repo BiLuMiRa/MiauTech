@@ -43,7 +43,7 @@ div {
 
 /*------------MENU----------*/
 header {
-  background-color:#f2f2f2;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -102,7 +102,7 @@ header .options a:hover {
   margin-top: 3%;
   margin-left: 3%;
   margin-bottom: 2%;
-  color:#28aef8;
+  color: #28aef8;
   font-size: 15px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.233);
@@ -111,7 +111,7 @@ header .options a:hover {
   padding: 4px;
   padding-left: 15px;
   padding-right: 2px;
-  outline:none;
+  outline: none;
 }
 
 .busca-input:focus {
@@ -137,13 +137,18 @@ header .options a:hover {
   flex-direction: column;
   align-items: center;
   color: black;
-  background-color: #f2f2f2;
+  background-color: #ccd5ff;
   padding: 7%;
   width: 250px;
   height: 345px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-family: fredoka;
   margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.vets div:hover {
+  transform: translateY(-10px);
 }
 
 .vets div img {
@@ -163,7 +168,7 @@ header .options a:hover {
   font-weight: 500;
   margin-bottom: 0px;
   text-decoration: none;
-  color:#1e86be;
+  color: #0b7bb8;
   text-align: center;
 }
 
@@ -191,15 +196,16 @@ header .options a:hover {
 /*-----------DETAILS VET---------*/
 .infos-vet {
   margin: 30px;
+  margin-top: 6%;
   display: flex;
-  color: #452824;
+  color: #242a45;
   gap: 30px;
 }
 
 .infos-vet .foto-vet {
   width: 300px;
   height: 300px;
-  background-color: #ffffff;
+  background-color: #242a45;
   border-radius: 18px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   position: relative;
@@ -254,7 +260,7 @@ header .options a:hover {
 
 .infos-vet .dados-vet button {
   font-size: 1.3rem;
-  background-color: #452824;
+  background-color: #242a45;
   border: none;
   border-radius: 12px;
   padding-left: 10px;
@@ -280,6 +286,7 @@ footer {
   flex-wrap: wrap;
   gap: 20px;
   text-align: center;
+  margin-top: 20%;
 }
 
 footer .logo-footer {

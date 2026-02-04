@@ -53,21 +53,17 @@ export default function VetsBuscados({ buscado }: VetsBuscadosProps) {
   }
 
   return (
-    <div>
-      <main className="vets">
-        {data.map((vet) => (
-          <div key={vet.id}>
-            <Link href={`/miaujuda/details/${vet.id}`}>
-              <div>
-                {vet.image && <img src={vet.image} alt={vet.name} />}
-                <p className="name">{vet.name}</p>
-                <p className="specialty">{vet.specialty}</p>
-                <p className="location">{vet.location}</p>
-              </div>
-            </Link>
+    <main className="vets">
+      {data.map((vet) => (
+        <Link key={vet.id} href={`/miaujuda/details/${vet.id}`}>
+          <div>
+            {vet.image && <img src={vet.image} alt={vet.name} />}
+            <p className="name">{vet.name}</p>
+            <p className="specialty">{vet.specialty}</p>
+            <p className="location">{vet.location}</p>
           </div>
-        ))}
-      </main>
-    </div>
+        </Link>
+      ))}
+    </main>
   );
 }
