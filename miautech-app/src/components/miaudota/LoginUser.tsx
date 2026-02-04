@@ -8,6 +8,7 @@ import SignUp from './SignUpUser'
 export default function LoginUser(props:any){
     async function authentication(event:FormEvent<HTMLFormElement>){
         event.preventDefault()
+        const form = event.currentTarget
 
         const formData = new FormData(event.currentTarget)
         const email = formData.get("email")
@@ -23,7 +24,7 @@ export default function LoginUser(props:any){
             alert(error.message)
         }else{
             alert("Usuário logado com sucesso")
-            event.currentTarget.reset()
+            form.reset()
             props.setLoginAberto(false)
         }
     }
